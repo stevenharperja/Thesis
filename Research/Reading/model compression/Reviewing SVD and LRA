@@ -1,0 +1,9 @@
+https://www.youtube.com/watch?v=uQhTuRlWMxw 
+Rank is the number of output dimensions, rank 2 means it outputs a plane, rank 1 means it outputs a line, etc.
+I wonder, what is the minimum number of output dimensions a model can give before it gets bad? i guess thats what compression seeks to find out.
+
+https://www.youtube.com/playlist?list=PLMrJAkhIeNNSVjnsviglFoY2nXildDCcv
+- https://www.youtube.com/watch?v=nbBvuuNVfco&list=PLMrJAkhIeNNSVjnsviglFoY2nXildDCcv&index=2
+    - The columns of U are related to the varience of columns of the orignal matrix A.
+    - U and V are unitary; orthonormal columns each of unit length
+    - V^T's columns (so the rows of V) would give the mixture of all of the columns of U@Sigma which add up to the corresponding (from V) column of X.

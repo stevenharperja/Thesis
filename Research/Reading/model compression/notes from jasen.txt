@@ -1,0 +1,20 @@
+reminds of pseudoinverse of a matrix.
+can get low rank approx. of matrices using pseudoinverses.
+
+eccart young thm. for svd
+
+steve brunton has videos on the topic. check svd to refresh self on topic
+and also eccart young thm just says best low rank approx. is obtained by keeping the leading singular values.
+
+other ways people choose the leading k values:
+optimal k based on how much error and such. there are for loop algorithms for it.
+
+
+
+flowfields would be cool for a wind game.
+
+
+
+
+
+https://www.youtube.com/playlist?list=PLMrJAkhIeNNSVjnsviglFoY2nXildDCcv

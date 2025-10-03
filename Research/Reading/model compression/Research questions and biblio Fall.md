@@ -163,7 +163,6 @@
     - good info on benchmarks for NLP, and measurements 
 
 
-/// Mainly just has stuff on alternatives to SVD and how SVD has been used I think?
 - Lei Deng, Guoqi Li, Song Han, Luping Shi, and Yuan Xie. 2020. Model compres-
     sion and hardware acceleration for neural networks: A comprehensive survey.
     Proc. IEEE 108, 4 (2020), 485–532. https://doi.org/10.1109/jproc.2020.2976475
@@ -210,6 +209,13 @@
         - so dont look into any of those ig?
     -   The paper also mentions lots of methods for tensor decomposition. not sure if I need that rn though.
     -   Mostly this paper gives techniques for decomposition it sounds like.
+    - Includes Tensor Decomposition
+    - Shim et al. [90] utilized SVD to compress the last softmax layer
+        for large vocabulary neural networks
+        -   K. Shim, M. Lee, I. Choi, Y. Boo, and W. Sung,
+            “SVD-softmax: Fast softmax approximation on
+            large vocabulary neural networks,” in Proc. Adv.
+            Neural Inf. Process. Syst., 2017, pp. 5463–5473.
 
 
 - Gaurav Menghani. 2023. Efcient deep learning: A survey on making deep
@@ -243,16 +249,58 @@ large nlp models[J]. Advances in neural information processing systems, 2021,
     - Uses GLUE benchmark
     - https://math.stackexchange.com/questions/4190516/how-to-decompose-a-matrix-as-the-sum-of-kronecker-products 
 
-//TOREAD
 - low-precision low-rank factorization (LPLR) 
     Rajarshi Saha, Varun Srivastava, and Mert Pilanci. 2023. Matrix compression via randomized low rank and low
     precision factorization. In Proceedings of the Advances in Neural Information Processing Systems 36: Annual Conference
     on Neural Information Processing Systems 2023, New Orleans, LA, USA, December 10–16, 2023
-- https://arxiv.org/abs/2106.09685 LoRA
+    - https://en.wikipedia.org/wiki/Johnson%E2%80%93Lindenstrauss_lemma
+    - https://en.wikipedia.org/wiki/Dither
+    - They use LLAMA.
+    - Other model quant compression works:  
+        -   T. Dettmers, M. Lewis, Y. Belkada, and L. Zettlemoyer. LLM.int8 (): 8-bit matrix multiplication
+            for transformers at scale. arXiv preprint arXiv:2208.07339, 2022. (Cited on pages 7 and 9)
+        -   E. Frantar, S. Ashkboos, T. Hoefler, and D. Alistarh. Gptq: Accurate post-training quantization
+            for generative pre-trained transformers. arXiv preprint arXiv:2210.17323, 2022. (Cited on
+            page 9
+        -   E. J. Hu, Y. Shen, P. Wallis, Z. Allen-Zhu, Y. Li, S. Wang, L. Wang, and W. Chen. LoRA:
+            Low-rank adaptation of large language models. In International Conference on Learning
+            Representations, 2022. URL https://openreview.net/forum?id=nZeVKeeFYf9. (Cited
+            on pages 1 and 9)
+    - They don't give any benchmarks for model accuracy. However, Frobenius norm error is a good thing to track layer by layer it seems
+    - Sharding a model
+        - Mohammad Shoeybi, Mostofa Patwary, Raul Puri, Patrick LeGresley, Jared Casper, and Bryan
+            Catanzaro. Megatron-lm: Training multi-billion parameter language models using model par-
+            allelism, 2020.
+    - They use GLUE for BERT models
+    - For GPT-2 they use a setup similar to:
+        -   Xiang Lisa Li and Percy Liang. Prefix-Tuning: Optimizing Continuous Prompts for Generation.
+            arXiv:2101.00190 [cs], January 2021. URL http://arxiv.org/abs/2101.00190.
+    - GPU is NVIDIA Tesla V100
+        - Not sure how this compares to what we have but its likely wayyyyy faster.
+        - Maybe I can look up papers on how to run models on edge devices to get stuff which could reliably run and be trained on our stuff.
+
+
+- LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS https://arxiv.org/abs/2106.09685 
+    - Looks hella useful. AND hella relevant for me to read all the way through.
+    - Uses RoBERTa, DeBERTa, GPT-2, and GPT-3 models
+    - Their technique is to only LRA the changes made when fine-tuning off a pre-trained model. This allows them also to
+        hot-swap these changes since they are stored seperately
+    - Later I think I wanna dig into their code. Or maybe build off of it.
+
 - Fisher-weighted SVD 
     Yen-Chang Hsu, Ting Hua, Sung-En Chang, Qiang Lou, Yilin Shen, and Hongxia Jin. 2022. Language model compres-
     sion with weighted low-rank factorization. In Proceedings of the 10th International Conference on Learning Represen-
     tations, Virtual Event, April 25–29, 2022.
+    - Factors in the significance of each term into how it should be modified during SVD, like how pruning does.
+    - Fisher Information
+        - Razvan Pascanu and Yoshua Bengio. Revisiting natural gradient for deep networks. In In Interna-
+            tional Conference on Learning Representations (ICLR), 2014
+        - A Tutorial on Fisher Information  https://arxiv.org/pdf/1705.01064
+    - Could be combined with LoRA into one thing? or do LoRA and then do FWSVD on the whole network including the frozen weights? How does LoRA work anyway?
+    - Uses lots of benchmarks
+    
+
+//TOREAD
 - true-weighted SVD (TFWSVD)
     Ting Hua, Yen-Chang Hsu, Felicity Wang, Qiang Lou, Yilin Shen, and Hongxia Jin. 2022. Numerical optimizations
     for weighted low-rank estimation on language models. In Proceedings of the 2022 Conference on Empirical Methods
@@ -325,3 +373,47 @@ large nlp models[J]. Advances in neural information processing systems, 2021,
         bandwidth-efficient gradient aggregation in
         distributed CNN training,” in Proc. Adv. Neural Inf.
         Process. Syst., 2018, pp. 5125–5135
+-   Huynh and
+        Won [82] proposed a new training method to achieve
+        acceleration, which is compatible with the SVD format
+        for networks with a single hidden layer. 
+        -   H. T. Huynh and Y. Won, “Training single hidden
+            layer feedforward neural networks by singular
+            value decomposition,” in Proc. 4th Int. Conf.
+            Comput. Sci. Converg. Inf. Technol., 2009
+-   Masana et al.
+    [83] used SVD to decompose the product of the input
+    and the weight matrix. 
+    -   M. Masana, J. V. D. Weijer, L. Herranz,
+        A. D. Bagdanov, and J. M. Alvarez,
+        “Domain-adaptive deep network compression,” in
+        Proc. IEEE Int. Conf. Comput. Vis. (ICCV),
+        Oct. 2017, pp. 4289–4297
+-   In the scenario of
+    distributed training, Yu et al. [91] utilized principal compo-
+    nent analysis (PCA) to linearly project the weight gradients
+    into a low-dimensional space that enables fast decentral-
+    ized gradient aggregation (e.g., ring all-reduce) in the
+    compressed domain
+    -   M. Yu et al., “GradiVeQ: Vector quantization for
+        bandwidth-efficient gradient aggregation in
+        distributed CNN training,” in Proc. Adv. Neural Inf.
+        Process. Syst., 2018, pp. 5125–5135
+-   there are also some
+    other matrix decomposition methods such as QR and
+    CUR 
+    -   N. Kishore Kumar and J. Schneider, “Literature
+        survey on low rank approximation of matrices,”
+        Linear Multilinear Algebra, vol. 65, no. 11,
+        pp. 2212–2244, Dec. 2016
+-   a variant similar to CUR called Nyström method
+    -   A. Gittens and M. W. Mahoney, “Revisiting the
+        Nyström method for improved large-scale
+        machine learning,” J. Mach. Learn. Res., vol. 17,
+        no. 1, pp. 3977–4041, 2016.
+- Shim et al. [90] utilized SVD to compress the last softmax layer
+    for large vocabulary neural networks
+    -   K. Shim, M. Lee, I. Choi, Y. Boo, and W. Sung,
+        “SVD-softmax: Fast softmax approximation on
+        large vocabulary neural networks,” in Proc. Adv.
+        Neural Inf. Process. Syst., 2017, pp. 5463–5473.
