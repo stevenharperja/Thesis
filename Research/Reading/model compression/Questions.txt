@@ -1,0 +1,9 @@
+-   I wonder if I could concatenate all of the matrixes in a neural network and treat them as one massive tensor. 
+    Since there could be shared relations between the matrices, would it be helpful for compressing it? 
+    Would patterns be picked up even tho they probably aren't linear?
+    -   Actually!!! While I don't know how that could be formatted to allow the model to improve its speed during inference,
+        Perhaps it could be applied to compress the total model weight size! Particularly when training. We could just update the 
+        Factors of the tensor during gradient descent, rather than storing 300billion or whatever parameters. It would be a smaller
+        total num of parameters to update! possibly better than matrix factorization could give?
+        -   Additionally maybe a technique similar to LORA could be considered.
+        -   Maybe inference would use the multiplied-out tensor, just for simplicity.

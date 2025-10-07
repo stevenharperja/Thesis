@@ -209,13 +209,155 @@
         - so dont look into any of those ig?
     -   The paper also mentions lots of methods for tensor decomposition. not sure if I need that rn though.
     -   Mostly this paper gives techniques for decomposition it sounds like.
-    - Includes Tensor Decomposition
     - Shim et al. [90] utilized SVD to compress the last softmax layer
         for large vocabulary neural networks
         -   K. Shim, M. Lee, I. Choi, Y. Boo, and W. Sung,
             “SVD-softmax: Fast softmax approximation on
             large vocabulary neural networks,” in Proc. Adv.
             Neural Inf. Process. Syst., 2017, pp. 5463–5473.
+    - Includes Tensor Decomposition # 
+    - ![alt text](images/tensors%20and%20matrixes.png)
+    -   Here, we first introduce an operation between a tensor
+        and a matrix called mode-i contracted product
+        -   N. Lee and A. Cichocki, “Fundamental tensor
+            operations for large-scale data analysis using
+            tensor network formats,” Multidimensional Syst.
+            Signal Process., vol. 29, no. 3, pp. 921–960,
+            Mar. 2017.
+            -   Renamed to: Fundamental Tensor Operations for Large-Scale Data Analysis in Tensor Train Formats
+    - Tucker Decomposition and classical prolongation (CP) Decomposition
+        -   T. G. Kolda and B. W. Bader, “Tensor
+            decompositions and applications,” SIAM Rev.,
+            vol. 51, no. 3, pp. 455–500, Aug. 2009
+        -   " Hence, CP is typically used for
+            interpreting data components while Tucker is often used
+            for data compression"
+    - https://rumn.medium.com/convex-vs-non-convex-functions-why-it-matters-in-optimization-for-machine-learning-39cd9427dfcc
+    -   Instead of directly replacing weights with decomposed tensors,
+        Chien and Bao [101] considered the entire decomposi-
+        tion process of (19) as a connection, similar to [102]
+        and [103]. Specifically, the input tensor X is treated as
+        the input layer, the kernel tensor K is treated as the
+        output layer, and the weights are replaced with sequential
+        mode-i contracted products among pseudo-inverse fac-
+        tor matrices of F (i), then the model accuracy would be
+        improved
+        -   J. Kossaifi, Z. C. Lipton, A. Khanna, T. Furlanello,
+            and A. Anandkumar, “Tensor regression
+            networks,” 2017, arXiv:1707.08308. [Online].
+            Available: http://arxiv.org/abs/1707.08308
+    - Higher Order SVD / Multilinear SVD
+        -   L. De Lathauwer, B. De Moor, and J. Vandewalle,
+            “A multilinear singular value decomposition,”
+            SIAM J. Matrix Anal. Appl., vol. 21, no. 4,
+            pp. 1253–1278, 2000.
+    -   Matrix Orthogonality?
+        -   https://en.wikipedia.org/wiki/Orthogonal_matrix
+    -   Tensor overview
+        -   https://web.stanford.edu/class/ee270/scribes/lecture4.pdf
+    -   hierarchical tucker (HT) and tensor train (TT)
+        -   "Although the HT format has flexible organization forms
+            (because the count of different dimension trees with a
+            fixed number of nodes is distributed as Catalan num-
+            bers [125]), it suffers from an intractable obstacle to obtain
+            an optimal specific form. As a result, just a few practices of
+            HT can be found [126]–[128]. Among them, only Cohen
+            and Shashua [128] and Cohen et al. [129] showed neural
+            network applications, but they are yet to answer how to
+            obtain an optimal HT form."
+            -   [128] N. Cohen and A. Shashua, “Convolutional rectifier
+                networks as generalized tensor decompositions,”
+                in Proc. 33rd Int. Conf. Mach. Learn., vol. 48,
+                2016, pp. 955–963
+            -   [129] N. Cohen, O. Sharir, and A. Shashua, “On the
+                expressive power of deep learning: A tensor
+                analysis,” J. Mach. Learn. Res., Workshop Conf.
+                Proc., vol. 49, pp. 1–31, Jun. 2016
+    -   "or Tucker and CP, the combination of them especially
+        BTD [107], [112] presents promising potential in
+        neural network compression."
+        -   [107] Y. Chen, X. Jin, B. Kang, J. Feng, and S. Yan,
+            “Sharing residual units through collective tensor
+            factorization to improve deep neural networks,” in
+            Proc. 27th Int. Joint Conf. Artif. Intell., Jul. 2018,
+            pp. 635–641.
+        -   [112] J. Ye et al., “Learning compact recurrent neural
+            networks with block-term tensor decomposition,”
+            in Proc. IEEE/CVF Conf. Comput. Vis. Pattern
+            Recognit., Jun. 2018, pp. 9378–9387.
+    -    The TC format [136]
+        (also called tensor ring [118]) is a variant of TT,
+        -   [118] Q. Zhao, M. Sugiyama, L. Yuan, and A. Cichocki,
+            “Learning efficient tensor representations with
+            ring-structured networks,” in Proc. ICASSP IEEE
+            Int. Conf. Acoust., Speech Signal Process. (ICASSP),
+            May 2019, pp. 8608–8612.
+        -   [136] M. Espig, K. K. Naraparaju, and J. Schneider,
+            “A note on tensor chain approximation,” Comput.
+            Vis. Sci., vol. 15, no. 6, pp. 331–344, 2012
+        -   [137] Q. Zhao, G. Zhou, S. Xie, L. Zhang, and
+            A. Cichocki, “Tensor ring decomposition,” 2016,
+            arXiv:1606.05535. [Online]. Available:
+            http://arxiv.org/abs/1606.05535
+        
+
+- Tensor Decomposition 
+    -   https://www.youtube.com/playlist?list=PL-dpUY5nCWZhOlc8XM398ps9A0CEDNGIH
+        -   Tamara Talk https://www.youtube.com/watch?v=L8uT6hgMt00&pp=ygUUdGVuc29yIGRlY29tcG9zaXRpb24%3D
+            -   Matrix Ideas that have been apparently extended to tensors
+                -   Independent Component Analysis? ICA
+                -   Nonnegative Matrix Factorization
+                -   Sparse Matrix Factorization
+                -   Matrix Completion
+            -   Rank 1 matrices are created by the outer product of two vectors. Thats it. its real simple. Then the sum of rank 1 matrices to do a low rank approx can be then written as a series of outer products. so its just a sum of each term of a[i]*b[j] for each a,b being the inputs to the outer products to make the ij'th term of all the rank 1 matrices. 6:38 and before explains this.
+            -   CP has many names and was invented thrice
+                - Canonical Polyadic is the nowadays accepted name
+                - CANDECOMP Canonical Decomposition
+                - Parallel Factors PARAFAC
+            -   Computing CP 
+                -   NP-Hard, even impossible for small tensors apparently, approximate instead.
+                -   Getting a rank 2 from a rank 1 isn't a sub problem, you have to recompute the whole thing? (Kolda 2001)
+                -   Factor matrices are not orthogonal, and also may have lin. dep. columns (18:59)
+                -   Factor matrices are unique solution ish.
+                -   Can solve using Least squares, fixing the values of the other matrices while you focus on a current matrix. (20:10)
+                    - nonconvex problem, but the subproblems for each matrix are convex.
+                    - using khatri-rao product
+                    - very overdetermined system, use randomization with CPRAND algorithm to solve this. randomized least squares
+                    - Dont actually store full matrix/tensor as those forms, just pull out pieces
+                        - Memory is a larger concern than speed here.
+                    - Johnson-Lindenstrauss transforms fixes some properties of the resulting matrix?? (24:28)
+                    - To check for convergence, take a poll of a random subset of terms to see if converged under accuracy we want
+                        - Chernoff-Hoeffding theory says how many samples are good number to take.
+                    -   Instead of Least squares, theres also other CP Decomp methods
+                        -   Better for data which is NOT continuous gaussian.
+                    -   Rayleigh CP(31:42)
+                        - good for non-negative data
+                        - Rayleigh is a distribution thats a little bit like normal distrib but positive. (kinda reminds me of the values that that imagenet model had)
+                    -   Boolean CP
+                        - for discrete (noncontinuous) data. Eg. 0s and 1s.
+                        - bernoulli distribtuion is relevant
+                    -   Poisson for count data
+                    -    Can use many types of objective functions for what kind of data you're working with. (35:35)
+                    -   Gradient of this has MTTKRP form ???
+                        - Type of kernel?
+                    -   graph data makes a sparse binary dataset (38:39)
+                        -    can use boolean CP
+                -   Knowing how the data is distributed is important to what techniques you apply and how you analyze it. In my case, my data is tensor/matrix values within a pretrained neural net.
+                -   Tensortoolbox for matlab
+                -   Parallel CP and GCP implementations: gitlab.com/tensors/genten
+                -   https://kolda.net/
+                    - Has links to her software, including a tucker thing?
+                    - "C:\Users\shwes\Documents\school\Thesis\Research\Reading\model compression\books\Tensor Textbook Final Draft Mar 25 2025.pdf"
+
+
+- https://kolda.net/post/tensor-textbook-final-draft/
+    "C:\Users\shwes\Documents\school\Thesis\Research\Reading\model compression\books\Tensor Textbook Final Draft Mar 25 2025.pdf"
+    -   nonnegative matrix factorization 
+
+
+                    
+    -   https://www.youtube.com/watch?v=ooY4qjomlPo&pp=ygUUdGVuc29yIGRlY29tcG9zaXRpb24%3D CP
+
 
 
 - Gaurav Menghani. 2023. Efcient deep learning: A survey on making deep
