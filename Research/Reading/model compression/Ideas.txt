@@ -1,0 +1,16 @@
+Training a model to have low rank matrices.
+    -   Related Work:
+        -   Wei Wen, Cong Xu, Chunpeng Wu, Yandan Wang, Yiran Chen, and Hai Li. Coordinating filters for
+            faster deep neural networks. In Proceedings of the IEEE international conference on computer
+            vision, pp. 658–666, 2017
+            https://wenwei202.github.io/
+            https://openaccess.thecvf.com/content_ICCV_2017/papers/Wen_Coordinating_Filters_for_ICCV_2017_paper.pdf
+        -   R2 Loss: Range Restriction Loss for Model Compression and Quantization
+            https://machinelearning.apple.com/research/range-regularization
+            https://arxiv.org/pdf/2303.08253
+            
+
+Treating all of a model's weights as a tensor then decomposing the tensor to make it so there are less parameters to train
+
+Combining techniques 
+    - maybe quantization and LRF and LoRA on the gradients and maybe ESPACE on the activation functions. See how small I can make one.

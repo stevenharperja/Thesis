@@ -442,27 +442,53 @@ large nlp models[J]. Advances in neural information processing systems, 2021,
     - Uses lots of benchmarks
     
 
-//TOREAD
 - true-weighted SVD (TFWSVD)
     Ting Hua, Yen-Chang Hsu, Felicity Wang, Qiang Lou, Yilin Shen, and Hongxia Jin. 2022. Numerical optimizations
     for weighted low-rank estimation on language models. In Proceedings of the 2022 Conference on Empirical Methods
     in Natural Language Processing, Abu Dhabi, United Arab Emirates, December 7–11, 2022.
+    -   References FWSVD
+
 - low-rank and sparse approximation (LoSparse)
     StarCoder: May the source be with
-    you! Transactions on Machine Learning Research. 1–55
+    you! Transactions on Machine Learning Research. 1–55 , https://arxiv.org/abs/2306.11222
+    -   They just combine low rank and pruning, thats it.
+    -   They use GLUE, MNLI dataset, SQuADv1.1, XSum (Narayan et al., 2018), and use Rouge-1 and F1 scores.
+
 - progressive low-rank decomposition  
     Habib Hajimolahoseini, Mehdi Rezagholizadeh, Vahid Partovinia, Marzieh S. Tahaei, Omar Mohamed Awad, and
     Yang Liu. 2021. Compressing pre-trained language models using progressive low rank decomposition. In Advances in
     Neural Information Processing Systems 35: Annual Conference on Neural Information Processing Systems 2021, December
     6–14, 2021, Virtual
+    -   What a great short presentation
+    -   They just iteratively do SVD to see how bad it gets and show their results.
+
 - low-rank decomposition (LoRD)
     Ayush Kaushal, Tejas Vaidhya, and Irina Rish. 2023. LORD: Low rank decomposition of monolingual code LLMs for
     one-shot compression. In Proceedings of the International Conference on Machine Learning, 23–29 July 2023, Honolulu,
     Hawaii, USA.
+    -   SPQR https://arxiv.org/abs/2306.03078
+    -   QLoRA https://arxiv.org/abs/2305.14314
+    -   Wow, they use Low rank approx, and show that it works. truly astounding /s
+
 - ESPACE
     Charbel Sakr and Brucek Khailany. 2024. ESPACE: Dimensionality reduction of activations for model compression.
     In Proceedings of the Advances in Neural Information Processing Systems 38: Annual Conference on Neural Information
     Processing Systems, Vancouver, BC, Canada, December 10–15, 2024.
+    -   Focuses on reducing Activation function dims.
+    -   " Nevertheless, compression fundamentally introduces
+            noise, and an open problem is to study the impact of combining different methods, e.g., quantization
+            and matrix factorization. This is beyond the scope of our paper, but a good direction for future work."
+    -   speculative decoding
+        -   https://pytorch.org/blog/hitchhikers-guide-speculative-decoding/
+    -   continuous batching 
+        -   https://www.anyscale.com/blog/continuous-batching-llm-inference
+        -   https://github.com/vllm-project/vllm //HUGE I should try using this!!!!!!!!
+            -   https://events.linuxfoundation.org/pytorch-conference/ GOSH THIS WOULD BE SO COOL TO GO TO!
+    -   PagedAttention
+    -   RadixAttention
+    -   Has a lot of references to other low rank factorization papers on page 2.
+    -   How are activation functions implemented in pytorch? Apparently they are a tensor?
+    -   Really good, should come back to this paper later.
 - Low-Rank Factorization 
     Nathan Srebro and Tommi S. Jaakkola. 2003.
     Weighted low-rank approximations. In Ma-
@@ -470,12 +496,67 @@ large nlp models[J]. Advances in neural information processing systems, 2021,
     International Conference (ICML 2003), August
     21-24, 2003, Washington, DC, USA, pages 720–
     727. AAAI Press.
+    -   Seems related to FWSVD but a bit too general for my case.
 - ASVD 
     Zhihang Yuan, Yuzhang Shang, Yue Song, Qiang
     Wu, Yan Yan, and Guangyu Sun. 2023b.
     ASVD: activation-aware singular value decom-
     position for compressing large language mod-
     els. CoRR, abs/2312.05821.
+    -   Seems complicated, worth understanding
+    -   They do a compression ratio on a per-layer basis.
+    -   They also show its compatible with quantization, which is helpful
+        - RTN and AWQ are the techniques they list.
+    -   Gives a lot of good background for other techniques which use Low rank Decomposition.
+    -   "They also involve constraining weight matrices to
+        maintain a fixed low rank during training [Jaderberg et al., 2014, Khodak et al., 2021, Wang et al.,
+        2021]" 
+        -   Max Jaderberg, Andrea Vedaldi, and Andrew Zisserman. Speeding up convolutional neural networks with low rank expansions. arXiv preprint arXiv:1405.3866, 2014
+        -   Mikhail Khodak, Neil Tenenholtz, Lester Mackey, and Nicolo Fusi. Initialization and regularization of factorized neural layers. In ICLR, 2021.
+            -   spectral initialization and Frobenius decay
+        -   Hongyi Wang, Saurabh Agarwal, and Dimitris Papailiopoulos. Pufferfish: Communication-efficient models at no extra cost. Proceedings of Machine Learning and Systems, 3:365-386, 2021
+            -   https://arxiv.org/abs/1909.11957 Early Bird Tickets
+            -   They train the model from scratch for the first 10%, then they factorize it. Then they train it for another 90% of the total allotted time.
+                -   Factorizing the model helps reduce the amount of gradients to communicate over the network, so they frame it as solving that problem.
+            -   I like this idea
+        -   The idea I was doing is this but without constraining it!!
+    -   "A notable limitation of these methods is the introduction of matrix decomposition rank as
+        a hyperparameter requiring fine-tuning. In contrast, rank-adaptive methods address this limitation
+        by automatically determining and adjusting the low-rank structure . In particular, Kim et al. [2015;
+        2019] apply heuristics search to pre-determine the decomposition rank, while Wen et al. [2017] learn
+        low-rank weights through a loss function penalizing approximated matrix ranks. Li et al. [2023] use
+        low-rank approximation plus a sparse matrix to compress the weight matrix in transformers"
+        -   Yong-Deok Kim, Eunhyeok Park, Sungjoo Yoo, Taelim Choi, Lu Yang, and Dongjun Shin. Com-
+            pression of deep convolutional neural networks for fast and low power mobile applications. arXiv
+            preprint arXiv:1511.06530, 2015.
+            -   bayesian matrix factorization
+            -   Tucker Decomposition is used.
+        -   Hyeji Kim, Muhammad Umar Karim Khan, and Chong-Min Kyung. Efficient neural network
+            compression. In Proceedings of the IEEE/CVF conference on computer vision and pattern
+            recognition, pp. 12569–12577, 2019.
+            -   idk I barely skimmed it.    
+        -   Wei Wen, Cong Xu, Chunpeng Wu, Yandan Wang, Yiran Chen, and Hai Li. Coordinating filters for
+            faster deep neural networks. In Proceedings of the IEEE international conference on computer
+            vision, pp. 658–666, 2017
+            -   https://openaccess.thecvf.com/content_ICCV_2017/papers/Wen_Coordinating_Filters_for_ICCV_2017_paper.pdf
+            -   Sounds like the "training to be low rank" idea
+            -   I wanna read this more, and maybe check out more by these authors.
+                -   LEARNING EFFICIENT SPARSE STRUCTURES IN SPEECH RECOGNITION https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8683620&tag=1
+                    -   https://en.wikipedia.org/wiki/Lasso_(statistics)
+            -   Looking up Force Regularization in duckduckgo:
+                -   MODULATING REGULARIZATION FREQUENCY FOR EFFICIENT COMPRESSION-AWARE MODEL TRAINING https://arxiv.org/pdf/2105.01875
+                -   https://machinelearning.apple.com/research/range-regularization <----- Relevant
+                    -   Similar idea, but they apply it mainly for quantization
+        -   Yixiao Li, Yifan Yu, Qingru Zhang, Chen Liang, Pengcheng He, Weizhu Chen, and Tuo Zhao.
+            Losparse: Structured compression of large language models based on low-rank and sparse approxi-
+            mation. In International Conference on Machine Learning, pp. 20336–20350. PMLR, 2023
+            -   Its LOSPARSE!!!!
+    -   ASVD specifically tries to do it without training.
+    -   They try to do it based on how sensitive each param is?
+        -   Not sure what sensitivity is defined as. Does it involve using data to understand what weights are important? or is it all just in the matrix math?
+    -   Worth another read.
+
+//TOREAD
 - LASER
     Pratyusha Sharma, Jordan T. Ash, and Dipendra
     Misra. 2024. The truth is in there: Improv-
@@ -559,3 +640,74 @@ large nlp models[J]. Advances in neural information processing systems, 2021,
         “SVD-softmax: Fast softmax approximation on
         large vocabulary neural networks,” in Proc. Adv.
         Neural Inf. Process. Syst., 2017, pp. 5463–5473.
+
+-   Instead of directly replacing weights with decomposed tensors,
+    Chien and Bao [101] considered the entire decomposi-
+    tion process of (19) as a connection, similar to [102]
+    and [103]. Specifically, the input tensor X is treated as
+    the input layer, the kernel tensor K is treated as the
+    output layer, and the weights are replaced with sequential
+    mode-i contracted products among pseudo-inverse fac-
+    tor matrices of F (i), then the model accuracy would be
+    improved
+    -   J. Kossaifi, Z. C. Lipton, A. Khanna, T. Furlanello,
+        and A. Anandkumar, “Tensor regression
+        networks,” 2017, arXiv:1707.08308. [Online].
+        Available: http://arxiv.org/abs/1707.08308
+- Higher Order SVD / Multilinear SVD
+    -   L. De Lathauwer, B. De Moor, and J. Vandewalle,
+        “A multilinear singular value decomposition,”
+        SIAM J. Matrix Anal. Appl., vol. 21, no. 4,
+        pp. 1253–1278, 2000.
+-   hierarchical tucker (HT) and tensor train (TT)
+    -   "Although the HT format has flexible organization forms
+        (because the count of different dimension trees with a
+        fixed number of nodes is distributed as Catalan num-
+        bers [125]), it suffers from an intractable obstacle to obtain
+        an optimal specific form. As a result, just a few practices of
+        HT can be found [126]–[128]. Among them, only Cohen
+        and Shashua [128] and Cohen et al. [129] showed neural
+        network applications, but they are yet to answer how to
+        obtain an optimal HT form."
+        -   [128] N. Cohen and A. Shashua, “Convolutional rectifier
+            networks as generalized tensor decompositions,”
+            in Proc. 33rd Int. Conf. Mach. Learn., vol. 48,
+            2016, pp. 955–963
+        -   [129] N. Cohen, O. Sharir, and A. Shashua, “On the
+            expressive power of deep learning: A tensor
+            analysis,” J. Mach. Learn. Res., Workshop Conf.
+            Proc., vol. 49, pp. 1–31, Jun. 2016
+
+-   "or Tucker and CP, the combination of them especially
+    BTD [107], [112] presents promising potential in
+    neural network compression."
+    
+    -   //have read
+        [107] Y. Chen, X. Jin, B. Kang, J. Feng, and S. Yan,
+        “Sharing residual units through collective tensor
+        factorization to improve deep neural networks,” in
+        Proc. 27th Int. Joint Conf. Artif. Intell., Jul. 2018,
+        pp. 635–641.    
+        -   ![alt text](images/BTD.png) 
+    -   //Have skimmed
+        [112] J. Ye et al., “Learning compact recurrent neural
+        networks with block-term tensor decomposition,”
+        in Proc. IEEE/CVF Conf. Comput. Vis. Pattern
+        Recognit., Jun. 2018, pp. 9378–9387.
+        -   https://openaccess.thecvf.com/content_cvpr_2018/papers/Ye_Learning_Compact_Recurrent_CVPR_2018_paper.pdf
+        -   Uses BTD
+        -   They do tensor decomp applied to an LSTM.
+-    The TC format [136]
+    (also called tensor ring [118]) is a variant of TT,
+    -   [118] Q. Zhao, M. Sugiyama, L. Yuan, and A. Cichocki,
+        “Learning efficient tensor representations with
+        ring-structured networks,” in Proc. ICASSP IEEE
+        Int. Conf. Acoust., Speech Signal Process. (ICASSP),
+        May 2019, pp. 8608–8612.
+    -   [136] M. Espig, K. K. Naraparaju, and J. Schneider,
+        “A note on tensor chain approximation,” Comput.
+        Vis. Sci., vol. 15, no. 6, pp. 331–344, 2012
+    -   [137] Q. Zhao, G. Zhou, S. Xie, L. Zhang, and
+        A. Cichocki, “Tensor ring decomposition,” 2016,
+        arXiv:1606.05535. [Online]. Available:
+        http://arxiv.org/abs/1606.05535

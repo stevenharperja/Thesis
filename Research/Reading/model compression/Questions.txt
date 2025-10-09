@@ -7,3 +7,10 @@
         total num of parameters to update! possibly better than matrix factorization could give?
         -   Additionally maybe a technique similar to LORA could be considered.
         -   Maybe inference would use the multiplied-out tensor, just for simplicity.
+    -   this paper might be related [107] Y. Chen, X. Jin, B. Kang, J. Feng, and S. Yan,
+        “Sharing residual units through collective tensor
+        factorization to improve deep neural networks,” in
+        Proc. 27th Int. Joint Conf. Artif. Intell., Jul. 2018,
+        pp. 635–641.    
+        -   ![alt text](images/BTD.png) 
+    - Maybe BTD Block Term Decomposition could be a good option?
