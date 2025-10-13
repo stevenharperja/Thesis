@@ -391,7 +391,7 @@ large nlp models[J]. Advances in neural information processing systems, 2021,
     - Uses GLUE benchmark
     - https://math.stackexchange.com/questions/4190516/how-to-decompose-a-matrix-as-the-sum-of-kronecker-products 
 
-- low-precision low-rank factorization (LPLR) 
+- low-precision low-rank factorization (LPLR) (35 citations)
     Rajarshi Saha, Varun Srivastava, and Mert Pilanci. 2023. Matrix compression via randomized low rank and low
     precision factorization. In Proceedings of the Advances in Neural Information Processing Systems 36: Annual Conference
     on Neural Information Processing Systems 2023, New Orleans, LA, USA, December 10–16, 2023
@@ -422,12 +422,13 @@ large nlp models[J]. Advances in neural information processing systems, 2021,
         - Maybe I can look up papers on how to run models on edge devices to get stuff which could reliably run and be trained on our stuff.
 
 
-- LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS https://arxiv.org/abs/2106.09685 
+- LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS https://arxiv.org/abs/2106.09685 (19415 ish citations)
     - Looks hella useful. AND hella relevant for me to read all the way through.
     - Uses RoBERTa, DeBERTa, GPT-2, and GPT-3 models
     - Their technique is to only LRA the changes made when fine-tuning off a pre-trained model. This allows them also to
         hot-swap these changes since they are stored seperately
     - Later I think I wanna dig into their code. Or maybe build off of it.
+    -   https://huggingface.co/docs/diffusers/training/lora 
 
 - Fisher-weighted SVD 
     Yen-Chang Hsu, Ting Hua, Sung-En Chang, Qiang Lou, Yilin Shen, and Hongxia Jin. 2022. Language model compres-
@@ -448,7 +449,7 @@ large nlp models[J]. Advances in neural information processing systems, 2021,
     in Natural Language Processing, Abu Dhabi, United Arab Emirates, December 7–11, 2022.
     -   References FWSVD
 
-- low-rank and sparse approximation (LoSparse)
+- low-rank and sparse approximation (LoSparse) (127 citations)
     StarCoder: May the source be with
     you! Transactions on Machine Learning Research. 1–55 , https://arxiv.org/abs/2306.11222
     -   They just combine low rank and pruning, thats it.
@@ -470,7 +471,7 @@ large nlp models[J]. Advances in neural information processing systems, 2021,
     -   QLoRA https://arxiv.org/abs/2305.14314
     -   Wow, they use Low rank approx, and show that it works. truly astounding /s
 
-- ESPACE
+- ESPACE (24 citations)
     Charbel Sakr and Brucek Khailany. 2024. ESPACE: Dimensionality reduction of activations for model compression.
     In Proceedings of the Advances in Neural Information Processing Systems 38: Annual Conference on Neural Information
     Processing Systems, Vancouver, BC, Canada, December 10–15, 2024.
@@ -497,7 +498,7 @@ large nlp models[J]. Advances in neural information processing systems, 2021,
     21-24, 2003, Washington, DC, USA, pages 720–
     727. AAAI Press.
     -   Seems related to FWSVD but a bit too general for my case.
-- ASVD 
+- ASVD (97 citations)
     Zhihang Yuan, Yuzhang Shang, Yue Song, Qiang
     Wu, Yan Yan, and Guangyu Sun. 2023b.
     ASVD: activation-aware singular value decom-
@@ -556,13 +557,107 @@ large nlp models[J]. Advances in neural information processing systems, 2021,
         -   Not sure what sensitivity is defined as. Does it involve using data to understand what weights are important? or is it all just in the matrix math?
     -   Worth another read.
 
-//TOREAD
-- LASER
+- LASER (85 citations)
     Pratyusha Sharma, Jordan T. Ash, and Dipendra
     Misra. 2024. The truth is in there: Improv-
     ing reasoning with layer-selective rank reduc-
     tion. In The Twelfth International Conference
     on Learning Representations
+    -   N. Elhage. A mathematical framework for transformer circuits. In Proceedings of the 2021 Conference on Empir-
+        ical Methods in Natural Language Processing. https: //transformer-circuits.pub/2021/framework/index.html,
+        2021.   https://transformer-circuits.pub/2021/framework/index.html
+    -   Torsten Hoefler, Dan Alistarh, Tal Ben-Nun, Nikoli Dryden, and Alexandra Peste. Sparsity in deep learning:
+        pruning and growth for efficient inference and training in neural networks. J. Mach. Learn. Res., 22(1):
+        10882–11005, January 2021.  https://arxiv.org/abs/2102.00554 
+    - Pruning later laters apparently incurs less error than pruning early layers in a network. I wonder why? maybe early layers are closer to their random initializations? or they need to carry more data from the early parts to the later parts so that requires higher rank?
+    -   ". [Yang et al.,
+        2020] have enforced low-rank-ness of weight matrices for the purposes of memory efficiency, but the resulting
+        models fail to achieve performance equivalent to their overparametrized counterpart"
+        -   Huanrui Yang, Minxue Tang, Wei Wen, Feng Yan, Daniel Hu, Ang Li, Hai Li, and Yiran Chen. Learning low-
+            rank deep neural networks via singular vector orthogonality regularization and singular value sparsification,
+            2020. https://arxiv.org/abs/2004.09031
+            -   "Low-rank
+                is encouraged by applying sparsity-inducing regularizers
+                on the singular values of each layer."
+            -   nuclear norm regularizer
+                -   https://arxiv.org/abs/2405.14544
+            -   "Optimizing the
+                nuclear norm requires conducting singular value decompo-
+                sition (SVD) on every training step, which is inefficient, es-
+                pecially when dealing with larger models"
+                -   Perhaps there could be a faster way to do this.
+            -   "To the best of our knowledge, this is the
+                first algorithm to explicitly search for the optimal rank of
+                each DNN layer during the training without performing the
+                decomposition operation at each training step."
+        -   Why is this the case? What insights could be learned about this because it is the case?
+            -   When do they apply the cut for SVD? is it at every step? or at the end? I think that could make a large difference.
+                -   If they DONT do it during, then it would slow their training down a LOT because they have the matrix decomposed during training.
+-   Huanrui Yang, Minxue Tang, Wei Wen, Feng Yan, Daniel Hu, Ang Li, Hai Li, and Yiran Chen. Learning low-
+    rank deep neural networks via singular vector orthogonality regularization and singular value sparsification,
+    2020. https://arxiv.org/abs/2004.09031 moving this here to its own bullet point
+    -   Yuhui Xu, Yuxi Li, Shuai Zhang, Wei Wen, Botao Wang,
+        Yingyong Qi, Yiran Chen, Weiyao Lin, and Hongkai Xiong.
+        Trained rank pruning for efficient deep neural networks.
+        arXiv preprint arXiv:1812.02402, 2018. 1, 2, 3, 4, 5, 6, 11
+    -   "Also, training the low-rank model from
+        scratch will make the optimization harder, as lower rank im-
+        plies lower model capacity"
+    -   Jose M Alvarez and Mathieu Salzmann. Compression-aware
+        training of deep networks. In Advances in Neural Informa-
+        tion Processing Systems, pages 856–867, 2017. 2
+        -   They mention overfitting as an issue. From what I understand, that isn't an issue in modern times for LLMs as much? I'm guessing because the datasets are absurdly large?
+    -   ", Alvarez et al. [1] and Xu et al. [35] explic-
+        itly estimate and reduce the rank throughout the training by
+        adding Nuclear Norm  (defined as the sum of all singular
+        values) regularizer to the training objective. These method
+        require performing SVD to compute and optimize the Nu-
+        clear Norm of each layer on every optimization step. Since
+        the complexity of the SVD operation is O(n3) and the gra-
+        dient computation through SVD is not straightforward [6],
+        performing SVD on every step is time consuming"
+        -   SURELY there is a better alternative my goodness. Has no one done it?
+            -   Matrix norms??? https://www-labs.iro.umontreal.ca/~grabus/courses/ift6760_W20_files/lecture-5.pdf
+            -   WHY DO THEY USE NUCLEAR NORM OVER FROBENIUS? WHAT DOES IT CHANGE????
+                -   HOW CAN I FIND AN EXPLANATION?????
+    -   I cant for the life of me believe they doubled the training time by training it decomposed. we gotta speed it up.
+
+- Revisiting LoRA: A Smarter Low-Rank Approach for Efficient Model Adaptation https://ieeexplore.ieee.org/abstract/document/11047778
+    -   HOLY FRICK THEY MADE LORA 2??????
+    -   Theres more than one LoRA 2.
+- A survey on LoRA of large language models https://link.springer.com/article/10.1007/s11704-024-40663-9 
+    -   THERES A SURVEY???
+    -   LISA 
+        Pan R, Liu X, Diao S, Pi R, Zhang J, Han C, Zhang T. LISA: layerwise
+        importance sampling for memory-efficient large language model fine-
+        tuning. 2024, arXiv preprint arXiv: 2403.17919
+    -   BitFit 
+        Zaken E B, Goldberg Y, Ravfogel S. BitFit: simple parameter-efficient
+        fine-tuning for transformer-based masked language-models. In:
+        Proceedings of the 60th Annual Meeting of the Association for
+        Computational Linguistics (Volume 2: Short Papers). 2022, 1−9
+    -   "Federated Learning" 
+        -   https://en.wikipedia.org/wiki/Federated_learning
+            -   Decentralized Federated Learning
+            -   Advances and Open Problems in Federated Learning https://arxiv.org/pdf/1912.04977
+                -   "Distributed Learning"
+            -   Pokhrel, Shiva Raj; Choi, Jinho (2020). "Federated Learning with Blockchain for Autonomous Vehicles: Analysis and Design Challenges". IEEE Transactions on Communications. 68 (8): 4734–4746. https://oa.mg/work/10.1109/tcomm.2020.2990686
+    -   Worth coming back to. I want to look into their sections on Efficiency improving and Federated learning.
+    -   LoRA section 2
+        //TOREAD
+        -   Tensor Method
+            Bershatsky D, Cherniuk D, Daulbaev T, Mikhalev A, Oseledets I.
+            LoTR: low tensor rank weight adaptation. 2024, arXiv preprint arXiv:
+            2402.01376
+        -   Edalati A, Tahaei M, Kobyzev I, Nia V P, Clark J J, Rezagholizadeh
+            M. KronA: parameter efficient tuning with kronecker adapter. 2022,
+            arXiv preprint arXiv: 2212.10650
+        -   He X, Li C, Zhang P, Yang J, Wang X E. Parameter-efficient model
+            adaptation for vision transformers. In: Proceedings of the 37th AAAI
+            Conference on Artificial Intelligence. 2023, 817−825
+- A Survey of Low-Rank Adaptation Techniques https://ieeexplore.ieee.org/document/11042839
+    -   THERES ANOTHER SURVEY
+//TOREAD
 - ALBERT (Lan et al. 2020) uses factorization for the embedding layer
     Lan, Z.; Chen, M.; Goodman, S.; et al. 2020. ALBERT: A
     Lite BERT for Self-supervised Learning of Language Repre-
@@ -586,16 +681,6 @@ large nlp models[J]. Advances in neural information processing systems, 2021,
     “Low-rank matrix factorization for deep neural network training with high-dimen-
     sional output targets,” in Proc. IEEE Int. Conf. Acoustics Speech Signal
     Processing, 2013, pp. 6655–6659
--   In the scenario of
-    distributed training, Yu et al. [91] utilized principal compo-
-    nent analysis (PCA) to linearly project the weight gradients
-    into a low-dimensional space that enables fast decentral-
-    ized gradient aggregation (e.g., ring all-reduce) in the
-    compressed domain
-    -   M. Yu et al., “GradiVeQ: Vector quantization for
-        bandwidth-efficient gradient aggregation in
-        distributed CNN training,” in Proc. Adv. Neural Inf.
-        Process. Syst., 2018, pp. 5125–5135
 -   Huynh and
         Won [82] proposed a new training method to achieve
         acceleration, which is compatible with the SVD format

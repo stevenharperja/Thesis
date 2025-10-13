@@ -5,7 +5,7 @@ from itertools import product
 def rank_norm(X):
     b = np.trace(X.T @ X)
     a = np.trace((X.T @ X).T @ (X.T @ X))
-    return a / (b ** 2)
+    return 1/( a / (b ** 2))
 
 # def 3_rank_norm(X): This math doesnt work
 #     b = np.trace(X.T @ X)
@@ -20,19 +20,29 @@ def rank_norm(X):
 #     [13,14,15,16]
 # ])
 
-M = np.array([
-    [  1, 0.5,   0,   0],
-    [  0,   0,   0, 0.5],
-    [  0, 0.5,   0, 0.5],
-    [  0,   0,   1,   0]
-])
+# M = np.array([
+#     [  1, 0.5,   0,   0],
+#     [  0,   0,   0, 0.5],
+#     [  0, 0.5,   0, 0.5],
+#     [  0,   0,   1,   0]
+# ])
 
-M = M * 2
+length = 10
+width = 10
+
+M = np.random.rand(length, width)
+M = M/10000 #it maybe works with small numbers?
+
+# M = M * 2
 
 u, s, vh = np.linalg.svd(M, full_matrices=True)
 S = np.zeros_like(M)
 S[:len(s), :len(s)] = np.diag(s)
 print("Singular values:\n", S)
+
+# print("Increasingly low rank")
+# for i in range(min(length,width)):
+#     small_sigma = np.
 
 # Rank 3 approximation
 s1 = np.diag([s[0], s[1], s[2], 0])
@@ -51,6 +61,11 @@ print(rank_norm(M))
 print(rank_norm(N))
 print(rank_norm(O))
 print(rank_norm(P))  # higher as we go down the list means good.
+print("compare to schatten (nuclear) norm")
+print(np.sum(s))  # lower as we go down the list means good.
+print(np.sum(np.diag(s1)))
+print(np.sum(np.diag(s2)))
+print(np.sum(np.diag(s3)))
 
 print("Testing random matrixes")
 
@@ -69,6 +84,7 @@ def make_high_rank_matrix(M):
     S = np.diag(S)
     high_rank = np.dot(U, np.dot(S, Vh))
     return high_rank
+
 print("-"*20)
 for i in range(1):
     M = np.random.rand(4, 4)

@@ -1,0 +1,1 @@
+https://github.com/ollama/ollama Good models looks like?

@@ -1,4 +1,4 @@
-Training a model to have low rank matrices.
+1. Training a model to have low rank matrices.
     -   Related Work:
         -   Wei Wen, Cong Xu, Chunpeng Wu, Yandan Wang, Yiran Chen, and Hai Li. Coordinating filters for
             faster deep neural networks. In Proceedings of the IEEE international conference on computer
@@ -8,9 +8,61 @@ Training a model to have low rank matrices.
         -   R2 Loss: Range Restriction Loss for Model Compression and Quantization
             https://machinelearning.apple.com/research/range-regularization
             https://arxiv.org/pdf/2303.08253
-            
+        -   Huanrui Yang, Minxue Tang, Wei Wen, Feng Yan, Daniel Hu, Ang Li, Hai Li, and Yiran Chen. Learning low-
+            rank deep neural networks via singular vector orthogonality regularization and singular value sparsification,
+            2020. https://arxiv.org/abs/2004.09031
+            -   LASER paper noted that ". [Yang et al.,
+                2020] have enforced low-rank-ness of weight matrices for the purposes of memory efficiency, but the resulting
+                models fail to achieve performance equivalent to their overparametrized counterpart"
+                -   So perhaps it is not worth pursuing.
+                -   Perhaps I could instead do it as a retraining problem?
+                    -   Use Knowledge distillation to train it and train it to have low rank?
+                        But knowledge distillation takes too long to train :/
+                        -   Maybe instead I could do something funky, and use the LoRA paper's thing to just train a lower rank set of stuff, 
+                            to try to eliminate the ranks of the original matrix? unfortunately I could only eliminate as many ranks as I have i think. So thats no good for eliminating lots of ranks like we want. :/
+                            -   There apparently exist some more gradual versions of LoRA which allow a rank to be learned? maybe I could add the rank parameter to this to try to minimize the rank of the result????? but that still migth not fix it?
+                                -   How do these work?
+                            -Could do just low rank factorization, then add lora on top.
+            -   They use the nuclear norm here, calculating it fully using SVD. But the norm I was thinking of doesn't do that. 
+                Maybe it could be a good alternative? I should do some math proofs on it or something.
+                -   https://ee227c.github.io/code/lecture5.html Maybe nuclear norm is the existing standard???
+                -   https://math.stackexchange.com/a/3415724 Remember that singular values would get funky due to multiplications.
+                -   https://www.aimsciences.org/article/doi/10.3934/jimo.2022045 They introduce a different rank regularization technique
+                    -   They say that the nuclear norm has problems where its dominated by the large singular values too much?
+                -   To prove the other one, or that the frobenius norm would be a good alternative, I think I need to prove this property:
+                    -   "The nuclear norm ‖ A ‖∗ is a convex envelope of the rank function rank ( A ) , so it is often used in mathematical optimization to search for low-rank matrices. " - https://en.wikipedia.org/wiki/Matrix_norm
+        -   Yuhui Xu, Yuxi Li, Shuai Zhang, Wei Wen, Botao Wang,
+            Yingyong Qi, Yiran Chen, Weiyao Lin, and Hongkai Xiong.
+            Trained rank pruning for efficient deep neural networks.
+            arXiv preprint arXiv:1812.02402, 2018. 1, 2, 3, 4, 5, 6, 11
+        -   Jose M Alvarez and Mathieu Salzmann. Compression-aware
+            training of deep networks. In Advances in Neural Informa-
+            tion Processing Systems, pages 856–867, 2017. 2
+                
 
-Treating all of a model's weights as a tensor then decomposing the tensor to make it so there are less parameters to train
+2. Treating all of a model's weights as a tensor then decomposing the tensor to make it so there are less parameters to train
+    -    Parameter sharing mixed with Low Rank Approximation.
 
-Combining techniques 
+3. Combining techniques just to apply them
     - maybe quantization and LRF and LoRA on the gradients and maybe ESPACE on the activation functions. See how small I can make one.
+    - Is it possible to get GPT-2 or 3 to run on 4 GB or so? then it would fit on my laptop.
+
+4. Combining ideas 1 and 2 somehow? training a low rank tensor?
+
+5. Making a JP version of grammarly?
+
+6. Making an RL model for board games or video games?
+
+7. Look up job descriptions which list model compression or its techniques as a prerequisite, and try doing the job they list if they list specific projects?
+    -    See C:\Users\shwes\Documents\school\Thesis\Research\Reading\Real industry ML.md
+
+8. Implementing a RAG model:
+    - Steps:
+        1. Understand RAG
+        2. Understand Agentic RAG
+        3. Look up company API's or something
+        4. Find a use case to apply it to as thesis. (doesn't have to be about model compression perhaps)
+
+10. Don't do mathematical research thing because the results are not guaranteed.
+
+
