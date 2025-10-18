@@ -1,0 +1,27 @@
+- https://arxiv.org/pdf/2005.11401 Original RAG paper
+- https://www.youtube.com/watch?v=T-D1OfcDW1M Short RAG tutorial 
+    -   Data can be open like internet, or could be closed like company private data
+    -   Making a good data retriever is also an worked on problem
+    -   & Generative part
+    -   The data is added to the context somehow. (as vector probably?)
+- https://www.youtube.com/watch?v=wzssm02u35I Code to use one.
+- https://www.langchain.com/langgraph Lang  from Bojian's email suggestions "Langchain/Langraph also provides well accepted open source lib/framework for RAG dev. "
+- https://github.com/langchain-ai/rag-from-scratch RAG from scratch tutorials
+    - https://www.youtube.com/playlist?list=PLfaIDFEXuae2LXbO1_PKyVJiQ23ZztA0x
+        -   Part 2. Indexing
+            -   Documents are converted to numbers
+                -   Methods:
+                    -   Bag of words (frequency)
+                    -   Model embeddings //used in the tutorial, theres an OpenAIEmbeddings package.
+                        -   Vector search afterwards
+                        -   https://www.pinecone.io/learn/series/faiss/hnsw/
+                            -   I love this topic its easily approachable because of past experience.
+                            - https://www.pinecone.io/learn/series/faiss/
+        -   5 Query translation multi query
+            -   using an LLM to change user question to improve retrieval.
+                - Can do it multiple times and combine the search results
+        -   6 Query translation RAG Fusion
+            -   it ranks the returned queries somehow?
+-   https://www.youtube.com/watch?v=lj-LGrnh1oU REALM paper reading Yannic
+    -   Bert model is good for embeddings
+

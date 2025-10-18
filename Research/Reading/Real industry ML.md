@@ -13,7 +13,7 @@
     -   Spark
 
 
-Model Compression jobs:
+### Model Compression jobs:
     -   https://www.indeed.com/viewjob?jk=4be6baf9a14d5d85&from=shareddesktop_copy 
         We are looking for an experienced Android AI/ML Engineer - 
         Infrastructure to develop advanced on-device machine learning systems 
@@ -105,5 +105,5 @@ Model Compression jobs:
 
 
     Topics from other job descriptions to look up:
-    -   VLMs
+    -   VLMs ---- VISION LANGUAGE MODEL
     -   MLOps tools

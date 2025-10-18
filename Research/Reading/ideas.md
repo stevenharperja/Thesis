@@ -65,4 +65,15 @@
 
 10. Don't do mathematical research thing because the results are not guaranteed.
 
+11. Asking sacred heart if they have anything they need analyzed for medical research  https://www.providence.org/locations/wa/sacred-heart-medical-center/research
 
+X12. I wonder if I could combine RAG to use image retrieval instead of text retrieval, and pipe it into chatgpt or something. then have it describe or create a similar image?
+    -   Or maybe a diffusion image production network could be used to query for images from an image database?
+        -   text -[premade diffusion model]-> image -[premade image embedding model]-> image search using a vector database
+        -   Maybe it already exists? Maybe its a good alternative to tagging images? Either way its fairly simple
+            -   https://www.yeschat.ai/gpts-9t55QeOYvWW-Descriptive-image-search This is NOT it?
+        -   https://www.pinecone.io/learn/clip-image-search/ Could be a good model. Actually this thing just does the whole process I think?
+        -   https://milvus.io/docs/text_image_search.md Image to text embeddings might be way better lol.
+
+13. RAG Use cases:
+    -   When would I want a vector database of pieces of text?
