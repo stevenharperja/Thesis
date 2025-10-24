@@ -77,3 +77,115 @@ X12. I wonder if I could combine RAG to use image retrieval instead of text retr
 
 13. RAG Use cases:
     -   When would I want a vector database of pieces of text?
+
+# 14. Federated Learning project
+I want the focus to be on the federated learning and compressed model training aspects. Distributed training of a model on phones.
+
+-   https://medium.com/@entrepreneurbilal10/federated-learning-95d7a6435f08 
+-   https://www.codegenes.net/blog/pytorch-federated/ 
+-   https://medium.com/@mayurkoshti12/deploying-pytorch-models-to-mobile-a-step-by-step-guide-for-ios-and-android-with-pytorch-mobile-f9ba03a3c34a 
+-   Based on jobs like this: https://www.indeed.com/viewjob?jk=4be6baf9a14d5d85&from=shareddesktop_copy 
+-   Stuff to use:
+    -   Tensorflow Lite
+        -   https://www.influxdata.com/blog/tensorflow-lite-tutorial-how-to-get-up-and-running/
+    -   ML Kit (including GenAI APIs)
+    -   MediaPipe
+    -   PyTorch Mobile
+-   Vague project outline:
+    -   Design, develop, and deploy on-device machine learning models optimized for Android, ensuring low latency and minimal resource consumption.
+    -   Implement local signal aggregation and real-time pattern recognition logic to enable responsive in-app actions driven by on-device inference.
+    -   Architect systems that support telemetry, secure logging, and privacy-first feedback collection for monitoring and evaluation.
+    -   Apply model compression and optimization techniques (e.g., quantization, pruning, distillation) to meet mobile performance constraints.
+    -   Develop secure, privacy-first solutions where all data processing and ML inference occur strictly on-device, with no external data exposure.
+    -   Enable mechanisms for continuous local learning and model updates using device-resident data and signals, without compromising privacy.
+    -   Ensure integration with Android’s security model and collaborate with platform and product teams to deploy AI features safely at scale.
+-   Should also cause me to learn these skill points:
+    -   Proven experience in Android development (Kotlin/Java), with strong understanding of system architecture, resource management, and performance tuning.
+    -   Hands-on expertise with on-device ML frameworks including TensorFlow Lite, ML Kit, MediaPipe, and PyTorch Mobile.
+    -   Solid foundation in machine learning and signal processing techniques, such as time-series modeling, clustering, classification, and real-time event detection.
+    -   Strong knowledge of mobile data handling and Android security practices, including permissions, sandboxing, and secure data storage.
+    -   Understanding of privacy-preserving learning techniques and data governance in mobile environments.
+    -   Familiarity with secure data handling on Android, including encrypted storage, permissions, sandboxing, and secure compute enclaves.
+    -   Experience with telemetry systems and evaluation pipelines for monitoring model performance on-device at scale.
+-   Additionally cause me to learn these skill points:
+    -   Experience building ML-driven mobile applications in domains requiring user personalization, privacy, or security.
+    -   Understanding of real-time data processing and behavioral modeling on resource-constrained edge devices.
+    -   Knowledge of on-device learning techniques, federated learning, or personalization methods.
+    -   Prior contributions to systems using federated learning, differential privacy, or local fine-tuning of models is a plus
+    -   Experience with backend infrastructure for model management (e.g., model registries, update orchestration, logging frameworks) is a plus.
+    -   Prior work with anomaly detection or behavioral modeling in resource-constrained environments is a plus.
+    -   Experience developing responsive systems capable of monitoring local context and dynamically triggering actions based on model outputs is a plus
+    -   Experience optimizing models for ARM architectures is a plus
+### Project ideas:
+-   Image describer on mobile, distributed on 3 virtual Android phones.
+-   Image classifier on mobile (maybe a plant recognition app or something?)
+-   local GPT  
+    -   use that 1.5 bit thing?
+    -   Squish something down? isnt there a thing called Mobilenet? MobileGPT? surely there is something even if its bad.
+-   I want the focus to be on the federated learning and compressed model training aspects.
+-   https://medium.com/@entrepreneurbilal10/federated-learning-95d7a6435f08 Something based on this?
+
+-   Federated learning analysis of toy medical data from a public dataset online.
+
+todo next: 
+-   Find tutorials on federated learning, Pytorch Mobile, Tensorflow Lite and federated learning, etc.
+-   See what ML Kit and MediaPipe are.
+-   Try the above tutorial on Flower.
+-   After checking those out, if it still sounds viable, ask Bojian his thoughts on if it would be viable.
+    -   Also ask him his thoughts on Phd for employability?
+-   Try this https://flower.ai/docs/framework/tutorial-series-get-started-with-flower-pytorch.html 
+
+-   Sources to look at:
+    -   https://flower.ai/docs/framework/tutorial-series-what-is-federated-learning.html
+        -   Model soup 2 babyeeeee Communication-Efficient Learning of Deep Networks from Decentralized Data https://arxiv.org/abs/1602.05629
+        -   https://en.wikipedia.org/wiki/Differential_privacy 
+    -   I wanna look back at that LoRA survey paper again.
+    -   Data to use: https://research.ewu.edu/computer_science/data 
+        -   Perhaps focus on medical data for diagnoses?
+            -   Image data?
+            -   EEG data? https://datasetsearch.research.google.com/search?src=0&query=phone%20medical&docid=L2cvMTFsdno5MjhieA%3D%3D
+        -   mobile phone focused data:
+            -   Malware?            
+                -   https://figshare.com/articles/dataset/Android_malware_dataset_for_machine_learning_2/5854653?file=10391991 
+                -   https://zenodo.org/records/3632184
+            -   Object detection?   https://universe.roboflow.com/yolov5appium/android-views 
+            -   RL button manipulation?
+                -   https://huggingface.co/datasets/Tonic/android-operator-episodes
+                -   https://figshare.com/articles/dataset/Dataset_of_smartphone-based_finger_tapping_test/26940823?file=49014607
+
+            -   Application transmitted data?
+                -   https://datasetsearch.research.google.com/search?src=0&query=android&docid=L2cvMTF2eXE0Z2h0NA%3D%3D
+            -   Qualitative medical data?
+                -   This is questionably valid. https://defined.ai/datasets/medical-app-analytics
+        KAGGLE HAS BETTER DATA :
+        - Medical Idea
+            -   Sleep disorder data https://www.kaggle.com/datasets/varishabatool/disorder
+            -   Chest XRays? https://www.kaggle.com/datasets/muhammadrehan00/chest-xray-dataset
+            -   Brain tumors https://www.kaggle.com/datasets/ishans24/brain-tumor-dataset
+            -   College placement https://www.kaggle.com/datasets/vrajesh0sharma7/college-student-placement
+            -   General synthetic healthcare dataset https://www.kaggle.com/datasets/prasad22/healthcare-dataset 
+            -   Heart failure dataset (Also has links to similar datasets) https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction
+            -   Diabetes https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset
+            -   General https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset 
+        - Phone Idea
+            -   Flower images https://www.kaggle.com/datasets/abedano/iris-flower-specie-dataset
+            -   Clouds https://www.kaggle.com/datasets/jockeroika/clouds-photos
+            -   Music Preferences? https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023
+            -   Twitter Sentiment Analysis? https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis
+            -   Network security? https://www.kaggle.com/datasets/dhoogla/nfunswnb15v2
+            -   Face Recognition https://www.kaggle.com/datasets/jessicali9530/lfw-dataset
+        - Company Idea
+            -   Employee https://www.kaggle.com/datasets/tawfikelmetwally/employee-dataset
+        
+            
+    -   Tensorflow Federated https://www.geeksforgeeks.org/deep-learning/federated-learning-with-tensorflow-federated/
+    -   https://www.ibm.com/think/topics/federated-learning
+
+    -   https://flower.ai/docs/examples/
+        -   Maybe learning with Jax could be fun https://flower.ai/docs/examples/quickstart-jax.html 
+            -   https://docs.jax.dev/en/latest/jax-101.html#jax-101
+    -   Android example!
+        -   https://flower.ai/docs/examples/android.html
+        -   https://flower.ai/docs/examples/app-pytorch.html
+    -   A collection! https://www.kaggle.com/datasets/wonghoitin/datasets-for-federated-learning 
+    -   Another collection! https://flower.ai/docs/datasets/ 
