@@ -174,8 +174,17 @@ todo next:
             -   Twitter Sentiment Analysis? https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis
             -   Network security? https://www.kaggle.com/datasets/dhoogla/nfunswnb15v2
             -   Face Recognition https://www.kaggle.com/datasets/jessicali9530/lfw-dataset
+            -   Human activity recognition https://github.com/xmouyang/FL-Datasets-for-HAR !!!!!!!!!!!!!!!!!!!!!!
+                -   Health related too! https://github.com/xmouyang/FL-Datasets-for-HAR/tree/main/datasets/IMU 
+            -   Smaller managable Images and text collection https://leaf.cmu.edu/
+            -   large Images https://machinelearning.apple.com/research/flair
+            -   Object Detection https://github.com/MenguChen/Federated_object_detection 
         - Company Idea
             -   Employee https://www.kaggle.com/datasets/tawfikelmetwally/employee-dataset
+        - General FL
+            -   A collection! https://www.kaggle.com/datasets/wonghoitin/datasets-for-federated-learning 
+            -   Another collection! https://flower.ai/docs/datasets/ 
+            -   satellite pictures FL specific https://arxiv.org/abs/2505.08325
         
             
     -   Tensorflow Federated https://www.geeksforgeeks.org/deep-learning/federated-learning-with-tensorflow-federated/
@@ -185,7 +194,18 @@ todo next:
         -   Maybe learning with Jax could be fun https://flower.ai/docs/examples/quickstart-jax.html 
             -   https://docs.jax.dev/en/latest/jax-101.html#jax-101
     -   Android example!
-        -   https://flower.ai/docs/examples/android.html
+        -   https://flower.ai/docs/examples/android.html !!!!!!!!!!!!!!!!!
         -   https://flower.ai/docs/examples/app-pytorch.html
-    -   A collection! https://www.kaggle.com/datasets/wonghoitin/datasets-for-federated-learning 
-    -   Another collection! https://flower.ai/docs/datasets/ 
+
+-   Perhaps I go with the phone idea, and train a convnet using the phone hardwares (not sure how itll do on an emulator)
+    -   Use model compression and see what exists already with flower or other architectures?
+-   Do we still have those raspberry pis? I could try this: https://flower.ai/docs/examples/embedded-devices.html
+    -   Ask Bojian and maybe ask Stu?
+    -   I really like this idea. I think its so cool.
+
+
+
+-   Raspberry pi idea related research:
+    -   https://github.com/SonySemiconductorSolutions/aitrios-rpi-tutorials-ai-model-training
+    -   https://medium.com/@wongsirikuln/yolo-model-compression-via-filter-pruning-for-efficient-inference-on-raspberry-pi-c8e53d995d81
+    -   https://colab.research.google.com/github/SonySemiconductorSolutions/aitrios-rpi-tutorials-ai-model-training/blob/main/notebooks/mobilenet-rps/custom_mobilenet.ipynb

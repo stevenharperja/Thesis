@@ -10,7 +10,7 @@
     -   NVIDIA profiling tools
 
 -   Software Engineer (Technical Leadership) - Machine Learning Specialist
-    -   Spark
+    -   Spark 
 
 
 ### Model Compression jobs:
