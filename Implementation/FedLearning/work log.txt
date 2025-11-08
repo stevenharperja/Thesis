@@ -1,0 +1,6 @@
+Set up raspberry pi hardware
+Flashed raspi 1-4, labelled 1-4 from bottom to top.
+Used wireshark to detect which IPs were on the switches.
+ssh'd into them and follow along tutorial, using py environment.
+Successfully set up raspberry pi 1,2,
+Use "pyenv activate my-env" to activate the env

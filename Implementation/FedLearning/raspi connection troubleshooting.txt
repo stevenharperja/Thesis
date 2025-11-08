@@ -3,3 +3,10 @@ Raspi1 = pi@fe80::ca74:9260:5a36:68a3 10.101.68.92
 Raspi2 = pi@                          10.101.68.124
 Raspi3 = pi@                          10.101.68.102
 Raspi4 = pi@                          10.101.68.84
+
+# Activate your environment
+    pyenv activate my-env
+
+# Repeat for each embedded device (adjust SuperLink IP and dataset-path)
+flower-supernode --insecure --superlink="10.101.68.96:9092" \
+                 --node-config="dataset-path='fashionmnist_part_1'"
