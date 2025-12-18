@@ -1,0 +1,3 @@
+https://www.researchgate.net/profile/Amirhossein-Moradi-10/publication/397797344_Reinforcement_Learning_in_Video_Game_Environments_A_Comprehensive_Review_of_Agents_Architectures_and_Challenges/links/691f37c608bddf210f76bbe3/Reinforcement-Learning-in-Video-Game-Environments-A-Comprehensive-Review-of-Agents-Architectures-and-Challenges.pdf
+
+https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE12109163

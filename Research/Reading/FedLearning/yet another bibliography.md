@@ -24,6 +24,8 @@
                         -   https://en.wikipedia.org/wiki/Ring_learning_with_errors
                         
                         -   Recent advances of privacy-preserving machine learning based on (Fully) Homomorphic Encryption https://sands.edpsciences.org/articles/sands/abs/2025/01/sands20240021/sands20240021.html
+        -   The Algorithmic Foundations of Differential Privacy https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf
+            -   Query-Release problem - https://www.cs.toronto.edu/~anikolov/CSC2412F20/notes/projection.pdf
 
 ### Surveys:
 #### IOT
@@ -93,3 +95,66 @@ of the 2017 IEEE Symposium on Security and Privacy (SP), San Jose, CA, USA, 22�
         -   I could modify the code they have myself to see, it wouldn't be too hard probably.
     -   "Now, as the adversary won’t call the complete model, we need to “cut off” the second-stage layers. This leaves us with a model that executes stage-one logic only. We save its weights, so we can later call it from the adversary:"
         -   I think this means that they get a latent intermediate vector output from within the model. So this would require knowing the model as a whole. So maybe HE could fix this? idk how though.
+
+-   https://github.com/AndrewZhou924/Awesome-model-inversion-attack
+
+-   Unraveling Model Inversion Attacks: A Survey of Machine Learning Vulnerabilities https://ieeexplore.ieee.org/document/10863257
+    -   25. M. Kahla, S. Chen, H. A. Just, and R. Jia, “Label-only model inversion attacks via boundary repulsion,” in Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, 2022, pp. 15045–15053.
+        -   https://arxiv.org/abs/2203.01925
+
+#### Differential Privacy
+-   A Comprehensive Guide to Differential Privacy: From Theory to User Expectations https://arxiv.org/pdf/2509.03294v2
+    -   Differencing Attacks
+        -   Privacy Violations Using Microtargeted Ads: A Case Study https://theory.stanford.edu/~korolova/Privacy_violations_using_microtargeted_ads.pdf
+        -   Gowtham Venkatadri, Athanasios Andreou, Yabing Liu, Alan Mislove, Krishna P. Gummadi, Patrick Loiseau, and Olivier Goga. Privacy risks with facebook’s pii-based targeting: Auditing a data broker’s advertising interface. In 2018 IEEE Symposium on Security and Privacy (SP), IEEE, pages    89–107, 2018 https://www.ftc.gov/system/files?file=documents/public_events/1223263/p155407privacyconmislove_1.pdf
+    -   https://en.wikipedia.org/wiki/Laplace_distribution
+    ##### Use cases of it
+        -   Cyber Physical Systems
+            -   https://en.wikipedia.org/wiki/K-anonymity ?
+                -   https://en.wikipedia.org/wiki/L-diversity
+            - Smart meter readings 
+                -   P Barbosa, A Brito, and H Almeida. A technique to provide differential pri-
+                    vacy for appliance usage in smart metering. Information Sciences, 370–371:
+                    355–367, 2016. Available at https://www.sciencedirect.com/science/
+                    article/pii/S0020025516305862
+            -   IOT stream processing
+                -   Y Chen, A Machanavajjhala, M Hay, and G Miklau. PeGaSus: Data-adaptive
+                    differentially private stream processing. In Proceedings of the 2017 ACM
+                    SIGSAC Conference on Computer and Communications Security, ACM,
+                    pages 1375–1388, 2017. Available at https://doi.org/10.1145/3133956.
+                    3134102.
+            -   Fog computing?
+                -   H Cao, S Liu, L Wu, Z Guan, and X Du. Achieving differential privacy against
+                    non-intrusive load monitoring in smart grid: A fog computing approach. Con-
+                    currency and computation, 31(22), 2019
+                -   https://en.wikipedia.org/wiki/Fog_computing
+            -   blockchain in fed learning?
+                -   J Liang, M Sadiq, G Yang, K Jiang, T Cai, and M Ma. Enhanced collaborative
+                    intrusion detection for industrial cyber-physical systems using permissioned
+                    blockchain and decentralized federated learning networks. Engineering Ap-
+                    plications of Artificial Intelligence, 135:108862, 2024. Available at https:
+                    //www.sciencedirect.com/science/article/pii/S0952197624010200.
+            -   Malware on android IoT
+                -   F Nawshin, D Unal, M Hammoudeh, and P.N Suganthan. AI-powered malware
+                    detection with differential privacy for zero trust security in Internet of Things
+                    networks. Ad hoc networks, 161:103523, 2024
+        -   Healthcare
+        -   Finance
+            -   I  Perez, J Wong, P Skalski, S Burrell, R Mortier, D McAuley, and D Sut-
+                ton. Locally differentially private embedding models in distributed fraud
+                prevention systems, 2024a. arXiv preprint arXiv:2401.02450. Available at
+                https://arxiv.org/abs/2401.02450.
+            -   Fedlearning 
+                -   W Ma, Z Yin, J Zhou, C Jia, H Yang, J Wang, and B Li. Research on credit
+                    card fraud detection system based on federated learning. In Proceedings of
+                    the 2024 3rd International Conference on Frontiers of Artificial Intelligence
+                    and Machine Learning, ACM, pages 242–245, 2024.
+            -   Fedlearning and SMPC
+                -   D Byrd and A Polychroniadou. Differentially private secure multi-party com-
+                    putation for federated learning in financial applications. In Proceedings of the
+                    First ACM International Conference on AI in Finance, ACM, 2021.
+    ##### Future work
+
+
+### FL Surveys
+-   A survey on federated learning: challenges and applications https://pmc.ncbi.nlm.nih.gov/articles/PMC9650178/
