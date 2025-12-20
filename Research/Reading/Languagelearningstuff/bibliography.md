@@ -51,6 +51,19 @@ arXiv preprint arXiv:2401.08664 (2023)
         -   Can I expand on the idea they did here? Is there a code base for it? Why didn't it work out? what happened?
         -   Could I make a full SRS software which recommends flashcards while also handling the flashcard aspect of things? is that too much to do?
 
+### LLMS for mobile
+- Federated Learning mobile LLMs
+    -   Memory-Efficient Split Federated Learning for LLM Fine-Tuning on Heterogeneous Mobile Devices https://arxiv.org/abs/2506.02940
+    -   FwdLLM: Efficient Federated Finetuning of Large Language Models with Perturbed Inferences https://www.usenix.org/conference/atc24/presentation/xu-mengwei
+    -   A Survey: Towards Privacy and Security in Mobile Large Language Models https://arxiv.org/abs/2509.02411
 
-- Federated Learning LLMs
-    -   
+- collaborative edge computing survey language models
+    -   A Review on Edge Large Language Models: Design, Execution, and Applications https://dl.acm.org/doi/full/10.1145/3719664
+    -   Edge-Cloud Collaborative Computing on Distributed Intelligence and Model Optimization: A Survey https://arxiv.org/abs/2505.01821
+
+-   https://github.com/NexaAI/Awesome-LLMs-on-device
+    -   https://github.com/jzhang38/TinyLlama
+        -   Some rando in their discord mentioned this: https://machinelearning.apple.com/research/fs-dfm No github though.
+
+-   https://huggingface.co/microsoft/bitnet-b1.58-2B-4T 
+-   https://github.com/microsoft/BitNet

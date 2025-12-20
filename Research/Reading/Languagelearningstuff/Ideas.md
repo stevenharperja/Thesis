@@ -32,3 +32,12 @@ Experience in one or more of the following areas is considered a strong plus:
     Experience providing technical leadership and/or guidance to other engineers
     Hands-on experience on developing compiler libraries or tools
     Hands-on experience with driver development for ASIC/FPGA https://ewu.joinhandshake.com/jobs/10242604
+
+
+#### Federated learning LLMs
+I could do make it provide reading comprehension questions or rephrase flashcards. The benefit behind using federated learning to do it could be that it would work offline? users could provide tags for whether an output was good or not or something. Additionally it could be extended to making reading comprehension questions about local text that the user has access too, but might not want to share, or could reveal personal information about the user, so that would be another benefit of using federated learning here.
+The downside would be that its working with a local model, and might not work very well, but I think it'd be fun to try and see how it goes.
+
+
+
+
