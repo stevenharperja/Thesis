@@ -39,5 +39,22 @@ I could do make it provide reading comprehension questions or rephrase flashcard
 The downside would be that its working with a local model, and might not work very well, but I think it'd be fun to try and see how it goes.
 
 
+### Free response questions autoencoder.
+Maybe I could do some sort of autoencoder answer checker thing? as flashcard? they write a sentence then it gets fed into an autoencoder to check the vector distance or something rather than doing an exact match?
 
+Maybe that could be the compression or federal learning attribute?
+
+Could be an E-Learning website type thing. For grading quizzes and stuff. 
+I've heard free response questions demonstrate learning better, 
+so perhaps doing an autoencoder to automate this could make this more accessible for an e-learning perspective.
+
+basically:
+1. encode the true answer
+2. encode the student answer
+3. compare using a distance metric.
+To train:
+Make a lot of responses that are similar and train the vectors to be close. train ones which are wrong to be further away.
+Maybe that would work idk.
+Gosh it would probably be garbage actually since logic in LLMs is bad.
+maybe it would work for checking grammar. frick idk.
 
