@@ -16,6 +16,8 @@
     - ran into errors because byt5 works differently from BERT. And thus needs some special data ??? things to arrange the data.
 - (Data Prep) Translate that Akkad->German data to be english on the german side instead. 
     - I will use the byt5 for this since it likely does well already.
+- (Ensembling) Once I feel I have explored what possibilities sound fun, I want to try ensembling.
+    - K-fold cross validation, possibly with Model Soup afterwards sounds good.
 
 # Current Problems I want to solve:
 - The data size is small. I want to augment it.
