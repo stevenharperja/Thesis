@@ -56,8 +56,22 @@ LRL = Low Resource Language
 [Mitigating the Disparity of Machine Translation Quality for Low Resource Languages](https://umm-csci.github.io/senior-seminar/seminars/spring2023/miller.pdf)
     - Backtranslation?
 
-[A Review of Challenges in Aspect-Based Sentiment Analysis Sub-tasks in Resource-scarce Indian Languages](https://ieeexplore.ieee.org/abstract/document/10392226)
-    - Survey, many of which are not LLM based.
-    - Interesting
-[Exploring the evolution and future prospects of Amharic to English machine translation: a systematic review](https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1456245/full)
-    - Quite thorough
+
+
+## From "Natural Language Processing with Transformers" book
+    - https://amitness.com/posts/data-augmentation-for-nlp
+
+## Search Terms
+"few shot learning translation", "few shot learning translation survey", "few shot learning "neural machine translation" survey"
+## Papers
+[The Unreasonable Effectiveness of Few-shot Learning for Machine Translation](https://proceedings.mlr.press/v202/garcia23a.html)
+
+[Few-Shot Learning Translation from New Languages](https://aclanthology.org/2025.emnlp-main.163/)
+
+[Survey of Low-Resource Machine Translation](https://aclanthology.org/2022.cl-3.6.pdf)
+    - Autoencoder backtranslation for monolingual data? (3.2.1)
+    - Unsupervised MT, doing stuff with word embeddings across the languages (3.2.2)
+    - 3.3 pre-trained embeddings
+    - 5.2 bilingual lexicons
+
+[Low-resource Neural Machine Translation: Methods and Trends](https://dl.acm.org/doi/full/10.1145/3524300#sec-3)

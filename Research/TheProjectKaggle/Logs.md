@@ -18,6 +18,10 @@
     - I will use the byt5 for this since it likely does well already.
 - (Ensembling) Once I feel I have explored what possibilities sound fun, I want to try ensembling.
     - K-fold cross validation, possibly with Model Soup afterwards sounds good.
+- (Data Augmentation) What if I made use of the specificity of the data?
+    - Since a lot of the data is like a business email, what if I swapped out names, swapped out beginning address lines, etc.? Maybe that is possible.
+    - There are a lot of numbers, I can swap numbers.
+
 
 # Current Problems I want to solve:
 - The data size is small. I want to augment it.

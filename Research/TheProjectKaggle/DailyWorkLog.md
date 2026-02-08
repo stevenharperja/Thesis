@@ -34,3 +34,7 @@ Foundation Models https://arxiv.org/pdf/2108.07258
 
 2/6/2026 
 - Found survey links for ML on Dead or low resource languages 
+
+2/8/2026
+- Looked through the book for techniques for dealing with having not many samples.
+- Found more surveys specifically for translation for LRL 
