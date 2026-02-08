@@ -31,3 +31,6 @@ Foundation Models https://arxiv.org/pdf/2108.07258
 
 2/5/2026
 - Advisor meeting
+
+2/6/2026 
+- Found survey links for ML on Dead or low resource languages 
