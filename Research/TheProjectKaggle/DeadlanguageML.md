@@ -66,8 +66,6 @@ LRL = Low Resource Language
 ## Papers
 [The Unreasonable Effectiveness of Few-shot Learning for Machine Translation](https://proceedings.mlr.press/v202/garcia23a.html)
 
-[Few-Shot Learning Translation from New Languages](https://aclanthology.org/2025.emnlp-main.163/)
-
 [Survey of Low-Resource Machine Translation](https://aclanthology.org/2022.cl-3.6.pdf)
     - Autoencoder backtranslation for monolingual data? (3.2.1)
     - Unsupervised MT, doing stuff with word embeddings across the languages (3.2.2)
@@ -75,3 +73,4 @@ LRL = Low Resource Language
     - 5.2 bilingual lexicons
 
 [Low-resource Neural Machine Translation: Methods and Trends](https://dl.acm.org/doi/full/10.1145/3524300#sec-3)
+    - Quite a bit. See gathered techniques page
