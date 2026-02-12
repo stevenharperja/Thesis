@@ -13,25 +13,25 @@
     - Uncertainty-aware self-training pg. 296
     - Link to https://amitness.com/posts/data-augmentation-for-nlp
 ### From ["A Visual Survey of Data Augmentation in NLP" ](https://amitness.com/posts/data-augmentation-for-nlp)
-    - Synonym replacement
-        - Thesaurus
-        - Word Embeddings
-        - Masked language modelling from a pretrained model to predict similar words
-        - low TF-IDF based word replacement. [(term frequency–inverse document frequency)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
-    - Back Translation
-    - Random noise injection
-        - Unigram Noising, Based on frequency distribution of a word
-        - Blank noising, replacing words with "_" or some other thing.
-        - Sentence Shuffling
-        - Random Insert
-        - Random Swap
-        - Random Delete
-    - Instance Crossover Augmentation, (swap pieces of different data phrases within same class) // We don't have classes. But a lot of these are similar in that they are basically emails.
-    - MixUp for Text 
-        - //Used for classification but maybe it could probably be adapted to translation? 
-        - word embeddings 
-        - sentences
-    - Links are provided to libraries. and the book does this too.
+- Synonym replacement
+    - Thesaurus
+    - Word Embeddings
+    - Masked language modelling from a pretrained model to predict similar words
+    - low TF-IDF based word replacement. [(term frequency–inverse document frequency)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+- Back Translation
+- Random noise injection
+    - Unigram Noising, Based on frequency distribution of a word
+    - Blank noising, replacing words with "_" or some other thing.
+    - Sentence Shuffling
+    - Random Insert
+    - Random Swap
+    - Random Delete
+- Instance Crossover Augmentation, (swap pieces of different data phrases within same class) // We don't have classes. But a lot of these are similar in that they are basically emails.
+- MixUp for Text 
+    - //Used for classification but maybe it could probably be adapted to translation? 
+    - word embeddings 
+    - sentences
+- Links are provided to libraries. and the book does this too.
 
 
 ### From [Low-resource Neural Machine Translation: Methods and Trends](https://dl.acm.org/doi/full/10.1145/3524300#sec-3)
