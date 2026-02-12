@@ -16,25 +16,18 @@
             - Masked language modelling from a pretrained model to predict similar words
             - low TF-IDF based word replacement. [(term frequency–inverse document frequency)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
         - Back Translation
-        - Text Surface Transformation //probably not useful
         - Random noise injection
-            - Spelling error injection //probably not useful
-            - querty keyboard error injection //probably not useful
             - Unigram Noising, Based on frequency distribution of a word
             - Blank noising, replacing words with "_" or some other thing.
             - Sentence Shuffling
             - Random Insert
             - Random Swap
             - Random Delete
-        - Instance Crossover Augmentation, (swap pieces of different data phrases within same class) // We don't have classes. Maybe we could make some?
-        - Syntax tree manipulation, eg. active voice to passive voice //probably not useful
+        - Instance Crossover Augmentation, (swap pieces of different data phrases within same class) // We don't have classes. But a lot of these are similar in that they are basically emails.
         - MixUp for Text 
-            - //Used for classification but could probably be adapted to translation? maybe??? HMM maybe not actually. Though Maybe I could pretrain on a classification task.
+            - //Used for classification but maybe it could probably be adapted to translation? 
             - word embeddings 
             - sentences
-        - Generative methods
-            - Conditional Pre-trained language models
-                - Take a starter "hook" such as a class label, and have a gpt-2 or other model print out a coressponding sentence that fits that label. //Class labels
         - Links are provided to libraries. and the book does this too.
     - Unsupervised Data Augmentation (pipeline technique?) pg. 295
     - Uncertainty-aware self-training pg. 296
