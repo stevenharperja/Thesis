@@ -1,5 +1,9 @@
 # Some techniques/tools/perspectives found from researching how others have done ML on dead languagess
 
+✅ = Tried it, and it resulted in a score increase
+❌ = Tried it, and it resulted in a score decrease (after fiddling and whatnot)
+📨 = Currently in progress
+
 ### From "Natural Language Processing with Transformers" book
 - Fill Mask/ Masked Language Modelling pg. 290
 - Data Augmentation: pg. 272
@@ -26,7 +30,7 @@
     - Random Insert
     - Random Swap
     - Random Delete
-- Instance Crossover Augmentation, (swap pieces of different data phrases within same class) // We don't have classes. But a lot of these are similar in that they are basically emails.
+- 📨 Instance Crossover Augmentation, (swap pieces of different data phrases within same class) // We don't have classes. But a lot of these are similar in that they are basically emails.
 - MixUp for Text 
     - //Used for classification but maybe it could probably be adapted to translation? 
     - word embeddings 
