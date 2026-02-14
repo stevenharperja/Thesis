@@ -38,3 +38,14 @@ Foundation Models https://arxiv.org/pdf/2108.07258
 2/8/2026
 - Looked through the book for techniques for dealing with having not many samples.
 - Found more surveys specifically for translation for LRL 
+
+2/12/2026
+- More research
+- Clean up bullet points.
+
+2/13/2026
+- Advisor meeting
+- Research how to augment the data for transformers in code.
+
+2/14/2026 
+- Write sentence splice function and train model with the augmented data.
