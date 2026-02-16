@@ -49,3 +49,4 @@ Foundation Models https://arxiv.org/pdf/2108.07258
 
 2/14/2026 
 - Write sentence splice function and train model with the augmented data.
+- Read about how word2vec algorithm works.
