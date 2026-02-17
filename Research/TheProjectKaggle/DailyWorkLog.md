@@ -48,5 +48,16 @@ Foundation Models https://arxiv.org/pdf/2108.07258
 - Research how to augment the data for transformers in code.
 
 2/14/2026 
-- Write sentence splice function and train model with the augmented data.
+- Write sentence splice function and train model with the augmented data. (10 epochs)
 - Read about how word2vec algorithm works.
+
+2/15/2026
+- Added random split and reran the training with 20 epochs instead of 10.
+    - Returned a (validation) loss of about 0.3 (about 50% of previous, very good.), with a chrf of about 4 (about 80% of previous, not good. we want this to go up).
+
+2/16/2026
+- Ran the model for 10 more epochs to see if I could squeeze a higher chrf since it looked like just maybe it'd still go up.
+    - Notably since I'm rerunning the notebook, it means I'm using different augmented data on this training round. Since I only (know how to?) initialize the data before the training starts.
+
+2/17/2026
+- Submitted model. obtained 26.4 score compared to 26.6 baseline. So the sentence splicing seems to have had little effect positively or negatively.
