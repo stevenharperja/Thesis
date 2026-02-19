@@ -21,6 +21,7 @@
 - (Data Augmentation) What if I made use of the specificity of the data?
     - Since a lot of the data is like a business email, what if I swapped out names, swapped out beginning address lines, etc.? Maybe that is possible.
     - There are a lot of numbers, I can swap numbers.
+- TODO ADD EXCEL EXPORT FOR 10 random (fixed seed) data points from the validation set of the training set. So that way I can see qualitatively how the model is doing, along with seeing a correct answer.
 
 
 # Current Problems I want to solve:

@@ -2,6 +2,7 @@
 
 ✅ = Tried it, and it resulted in a score increase
 ❌ = Tried it, and it resulted in a score decrease (after fiddling and whatnot)
+⬜ = Tried it, and it resulted in about the same score
 📨 = Currently in progress
 
 ### From "Natural Language Processing with Transformers" book
@@ -30,7 +31,8 @@
     - Random Insert
     - Random Swap
     - Random Delete
-- 📨 Instance Crossover Augmentation, (swap pieces of different data phrases within same class) // We don't have classes. But a lot of these are similar in that they are basically emails.
+- ⬜ Instance Crossover Augmentation, (swap pieces of different data phrases within same class) // We don't have classes. But a lot of these are similar in that they are basically emails.
+    - *resulted in similar score but took longer to train*
 - MixUp for Text 
     - //Used for classification but maybe it could probably be adapted to translation? 
     - word embeddings 
@@ -54,6 +56,9 @@
         - "adversarial training objective is also introduced to constrain the source and the target sentence latent representations to have the same distribution. "
 - Unsupervised Bilingual Word Embedding (UBWE) (3.2)
     - /// I wonder if I could use some sort of autoencoder model with the akkad stuff. or if that would even be worth the time? how hard is it to do?
+    - [Vecmap Technique](https://github.com/artetxem/vecmap) seems to be supported by related papers
+        - Perhaps I can use this to jointly and accurately add data augmentation.
+
 - Byte Pair Encoding (3.3)
 - Replacing words with low frequency words (3.4)
     - prioritize ones which are low freq in the target vocabulary. (Maybe akkad here?)

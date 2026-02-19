@@ -60,4 +60,16 @@ Foundation Models https://arxiv.org/pdf/2108.07258
     - Notably since I'm rerunning the notebook, it means I'm using different augmented data on this training round. Since I only (know how to?) initialize the data before the training starts.
 
 2/17/2026
-- Submitted model. obtained 26.4 score compared to 26.6 baseline. So the sentence splicing seems to have had little effect positively or negatively.
+- Submitted model. obtained 26.4 score compared to 26.6 baseline. So the sentence splicing seems to have had little effect positively or negatively. And took about 1.5 times as long to train. 
+
+2/18/2026
+- Briefly compared qualitatively the sentences that both models models produced. They both look fine on the small scale but both look like nonsense sentences.
+- Reran the sentence splice with 8 beams instead of 4. Notably I don't think I've used 8 beams for the baseline yet to compare with.
+    - 8 beams for the sentence spliced achieved 26.6, which is the same as the baseline with 4 beams.
+    - Apparently I lost the baseline model. So I will likely have to retrain it again if I can't find it.
+- Found various papers on bilingual word embeddings.
+    - particularly interested in this one: [Bilingual word embedding fusion for robust unsupervised bilingual lexicon induction](https://www.sciencedirect.com/science/article/pii/S1566253523001343) 
+
+2/19/2026
+- Added TODO.
+- Advisor meeting

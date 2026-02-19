@@ -74,3 +74,25 @@ LRL = Low Resource Language
 
 [Low-resource Neural Machine Translation: Methods and Trends](https://dl.acm.org/doi/full/10.1145/3524300#sec-3)
     - Quite a bit. See gathered techniques page
+
+
+## Search terms
+"crosslingual word embeddings", "embedding augmentation nlp bilingual", "embedding augmentation nlp bilingual github.com" in duckduckgo
+## Papers
+Unsupervised Bilingual Word Embedding
+- [Unsupervised Bilingual Word Embedding Agreement for Unsupervised Neural Machine Translation](https://aclanthology.org/P19-1119/)
+    - Vecmap mentioned
+- [Bilingual word embedding fusion for robust unsupervised bilingual lexicon induction](https://www.sciencedirect.com/science/article/pii/S1566253523001343#sec5)
+    - Vecmap mentioned
+- [Cross-lingual embedding methods and applications: A systematic review for low-resourced scenarios](https://www.sciencedirect.com/science/article/pii/S2949719125000330)
+- [Bilingual word embedding fusion for robust unsupervised bilingual lexicon induction](https://www.sciencedirect.com/science/article/pii/S1566253523001343) 
+    - [isomorphic spaces](https://math.stackexchange.com/questions/441758/what-does-isomorphic-mean-in-linear-algebra#441767)
+    - Vecmap mentioned
+    - [procrustes analysis](https://www.sciencedirect.com/topics/computer-science/procrustes-analysis)
+        - Basically linalg least squares but you're not allowed to stretch anything, only rotate, translate, and flip are allowed.
+    - So basically its a lin transformation on vecmap during the process.
+- [Data Augmentation Techniques for NLP](https://github.com/styfeng/DataAug4NLP)
+    - https://github.com/marziehf/DataAugmentationNMT
+    - https://github.com/xiamengzhou/DataAugForLRL
+    - https://github.com/nng555/ssmba
+    - https://github.com/nxphi47/data_diversification
