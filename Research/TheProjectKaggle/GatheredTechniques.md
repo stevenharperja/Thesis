@@ -33,6 +33,9 @@
     - Random Delete
 - ⬜ Instance Crossover Augmentation, (swap pieces of different data phrases within same class) // We don't have classes. But a lot of these are similar in that they are basically emails.
     - *resulted in similar score but took longer to train*
+        - The error loss was able to get much much lower on the validation set before overfitting. However the Chrf score was slower to come up. Overall this led to a model which was more stable during training, but did not end up being better in the end. But perhaps that stability means something? I'm not sure what it means.
+        - Used a 1:1 fake data to real data ratio. 
+        - Increasing beams during inference lead to (very minute) better chrf results. (I haven't compared whether the baseline also behaves this way yet)
 - MixUp for Text 
     - //Used for classification but maybe it could probably be adapted to translation? 
     - word embeddings 

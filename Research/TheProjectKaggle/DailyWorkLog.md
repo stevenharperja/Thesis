@@ -71,5 +71,19 @@ Foundation Models https://arxiv.org/pdf/2108.07258
     - particularly interested in this one: [Bilingual word embedding fusion for robust unsupervised bilingual lexicon induction](https://www.sciencedirect.com/science/article/pii/S1566253523001343) 
 
 2/19/2026
-- Added TODO.
+- Added TODO for how to compare results of the models better.
+- Added more details for how the sentence splice performed.
+    - I think I might be able to train the sentence splice one longer and see if I could get an even higher chrf score. It doesn't look like it's really overfitted much yet.
+- Read introduction section of [Translating Akkadian to English with neural machine translation](https://academic.oup.com/pnasnexus/article/2/5/pgad096/7147349?login=true#412513286) paper.
 - Advisor meeting
+- Ran sentence split for another 10 epochs (total 20+10+10=40)
+
+2/20/2026
+- Ran sentence split for another 10 epochs (total 20+10+10+10=50)
+    - CHRF value is still going up???
+- Evaluated the 40 epoch one from yesterday with
+    - 4 beams: 30.4
+    - 8 beams: 30.4
+    - 16 beams:30.4
+    - this beats the 26.6 baseline i had
+- eval'd 50 epoch, it had 30.4 for 4 beams

@@ -22,6 +22,7 @@
     - Since a lot of the data is like a business email, what if I swapped out names, swapped out beginning address lines, etc.? Maybe that is possible.
     - There are a lot of numbers, I can swap numbers.
 - TODO ADD EXCEL EXPORT FOR 10 random (fixed seed) data points from the validation set of the training set. So that way I can see qualitatively how the model is doing, along with seeing a correct answer.
+- (vec stuff) make the corpus and run word2vec, then run the vec thing to mix with english (perhaps train my own word2vec on en too?). then run make a function to augment the sentences to pick the least common words in the corpus and do more of those.
 
 
 # Current Problems I want to solve:

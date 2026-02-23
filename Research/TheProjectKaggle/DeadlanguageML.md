@@ -96,3 +96,15 @@ Unsupervised Bilingual Word Embedding
     - https://github.com/xiamengzhou/DataAugForLRL
     - https://github.com/nng555/ssmba
     - https://github.com/nxphi47/data_diversification
+
+
+## Rec'd by tappan
+- [Translating Akkadian to English with neural machine translation](https://academic.oup.com/pnasnexus/article/2/5/pgad096/7147349?login=true#412513286)
+    - Translation Memory
+        - https://en.wikipedia.org/wiki/Translation_memory
+        - https://thaonco.com/translation-times/technology/translation-memory/
+
+## Word2Vec
+- https://radimrehurek.com/gensim/auto_examples/tutorials/run_word2vec.html
+    - https://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/
+    - https://fasttext.cc/
