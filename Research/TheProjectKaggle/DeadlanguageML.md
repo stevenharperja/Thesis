@@ -98,6 +98,9 @@ Unsupervised Bilingual Word Embedding
     - https://github.com/nxphi47/data_diversification
 
 
+
+
+
 ## Rec'd by tappan
 - [Translating Akkadian to English with neural machine translation](https://academic.oup.com/pnasnexus/article/2/5/pgad096/7147349?login=true#412513286)
     - Translation Memory
@@ -108,3 +111,7 @@ Unsupervised Bilingual Word Embedding
 - https://radimrehurek.com/gensim/auto_examples/tutorials/run_word2vec.html
     - https://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/
     - https://fasttext.cc/
+
+## search term 
+"Bilingual word embedding fusion for robust unsupervised bilingual lexicon induction github"
+- [Dual Word Embedding for UBLI](https://github.com/liguo-cs/Dual-BLI)

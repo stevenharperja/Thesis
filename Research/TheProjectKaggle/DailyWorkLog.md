@@ -87,3 +87,28 @@ Foundation Models https://arxiv.org/pdf/2108.07258
     - 16 beams:30.4
     - this beats the 26.6 baseline i had
 - eval'd 50 epoch, it had 30.4 for 4 beams
+
+2/22/2026
+- Made code for word2vec.
+
+2/23/2026 
+- Trained word2vec on akkadian.
+- Started training a backwards EN -> AKKAD translator for 20 epochs using sentence split to see if that can make more data, and if it can help to make a forward translator later.
+    - Plans:
+        - After it is done training for 20 epochs I want to use it to make more data. Notably we should *not* train it very well, since it will be used on our same training data. 
+            - Maybe I should have only done 10 epochs, or did a different split. Oh well.
+        - I want to try using that data to train a fresh byt5. Ideally I'd like to try it on the baseline, the sentence split, and the backtranslator, but that is a lot of time that may not be worth it right now.
+- Read over the backtranslation [paper](https://aclanthology.org/P16-1009.pdf) referenced by the [big paper](https://dl.acm.org/doi/full/10.1145/3524300#sec-3) I had, They used a 1:1 synthetic to real ratio it looks like.
+
+2/25/2026
+- Read through the rest of [Bilingual word embedding fusion for robust unsupervised bilingual lexicon induction](https://www.sciencedirect.com/science/article/pii/S1566253523001343#b31)
+- Looked over the vecmap github page and others to see if there are more recent alternatives.
+- Add TODO in word2vec notebook.
+- Interestingly, numbers are the highest rate word in the dataset.
+
+2/26/2026
+- Advisor meeting
+
+2/27/2026
+- Made EN word2vec mappings.
+- Run VecMap
