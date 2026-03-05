@@ -115,3 +115,11 @@ Unsupervised Bilingual Word Embedding
 ## search term 
 "Bilingual word embedding fusion for robust unsupervised bilingual lexicon induction github"
 - [Dual Word Embedding for UBLI](https://github.com/liguo-cs/Dual-BLI)
+
+
+
+
+## Kaggle
+
+This is useful: [Insights from the Akkademia Codebase & PNAS Paper for the Deep Past Challenge](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/discussion/673904)
+        - [BPE size](https://www.rws.com/language-weaver/blog/issue-121-finding-the-optimal-vocabulary-size-for-neural-machine-translation/) which is [Byte Pair Encoding.](https://en.wikipedia.org/wiki/Byte-pair_encoding)

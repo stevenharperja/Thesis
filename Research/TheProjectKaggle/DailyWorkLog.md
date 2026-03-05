@@ -111,4 +111,19 @@ Foundation Models https://arxiv.org/pdf/2108.07258
 
 2/27/2026
 - Made EN word2vec mappings.
-- Run VecMap
+- Run VecMap using default "Unsupervised" setting
+- Test vecmap and rerun using "Identical" setting to make sure that the shared "THISISANUMBER" word is mostly aligned. 
+    - They have cosine similarity of 0.68, Meaning that they are at a 47 degree angle from each other, which guarantees that they are in the same quadrant in 10D space.
+    - Other words like šalimaššur and ennamaššur have even less cosine similarity at 0.26 (75 degrees) and 0.58 (54 degrees)
+    - These degrees are not the worst, As long as they are less than 90 degrees for all major cases it should be usable. But if they could be within 30 degrees that would be preferable.
+    - These similarities are subject both to inaccuracy caused by vecmap, and by inaccuracy from low data given to gensim.
+
+3/4/2026
+- Ran the backtranslation model to create a csv file.
+
+3/5/2026
+- Reran the backtranslation model after fixing a KeyError.
+- Read over various Kaggle discussions on the competition.
+    - This is useful: [Insights from the Akkademia Codebase & PNAS Paper for the Deep Past Challenge](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/discussion/673904)
+        - [BPE size](https://www.rws.com/language-weaver/blog/issue-121-finding-the-optimal-vocabulary-size-for-neural-machine-translation/) which is [Byte Pair Encoding.](https://en.wikipedia.org/wiki/Byte-pair_encoding)
+    - [Current state of the leaderboard as of 25 ish days ago?](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/discussion/672511)

@@ -33,7 +33,7 @@
     - Random Swap
     - Random Delete
 - ✅ Instance Crossover Augmentation, (swap pieces of different data phrases within same class) // We don't have classes. But a lot of these are similar in that they are basically emails.
-    - *resulted in similar score but took longer to train*
+    - *resulted in slightly higher score but took longer to train*
         - The error loss was able to get much much lower on the validation set before overfitting. However the Chrf score was slower to come up. Overall this led to a model which was more stable during training, but did not end up being better in the end. But perhaps that stability means something? I'm not sure what it means.
         - Used a 1:1 fake data to real data ratio. 
         - Increasing beams during inference lead to (very minute) better chrf results. (I haven't compared whether the baseline also behaves this way yet)
@@ -47,7 +47,7 @@
 ### From [Low-resource Neural Machine Translation: Methods and Trends](https://dl.acm.org/doi/full/10.1145/3524300#sec-3)
 ![Alt text](MD_images/tallip-21-0210-f01.jpg "a title")
 - Backtranslation (section 3.1)
-    - Use the original dataset to train the nn to do EN->Akkad. Then use a diff nn to create more Akkad<->EN Dummy data pairs from English data.
+    - 🛠️ Use the original dataset to train the nn to do EN->Akkad. Then use a diff nn to create more Akkad<->EN Dummy data pairs from English data.
         - Then use this data to train a model. Apparently has proven effectiveness 
         - Apparently if you use the same model for both tasks it can have different effectiveness (unclear whats better?)
         - Or you can train two (one forward one backward) models at the same time to try to match each others output to agree with their translations
