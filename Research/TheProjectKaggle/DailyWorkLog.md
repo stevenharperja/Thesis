@@ -127,3 +127,11 @@ Foundation Models https://arxiv.org/pdf/2108.07258
     - This is useful: [Insights from the Akkademia Codebase & PNAS Paper for the Deep Past Challenge](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/discussion/673904)
         - [BPE size](https://www.rws.com/language-weaver/blog/issue-121-finding-the-optimal-vocabulary-size-for-neural-machine-translation/) which is [Byte Pair Encoding.](https://en.wikipedia.org/wiki/Byte-pair_encoding)
     - [Current state of the leaderboard as of 25 ish days ago?](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/discussion/672511)
+- Advisor meeting
+- Started training a fresh model on the backtranslation augmented data. (the backtranslation data was generated using the split sentence training for 20 epochs btw!)
+- Reran vecmap with 15 dimensional vectors instead of 10 to allow more distinction between vectors. Didn't fix it that much but it should be better.
+- ran the backtranslation-augmented model
+    - got 29.1 on 4 beams.
+    - got 29.1 on 8 beams.
+- trained the fresh model on the backtranslation augmented data for another 10 epochs.
+- Tried to make the synonym replacement train file. Ran into errors.
