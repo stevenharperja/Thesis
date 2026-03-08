@@ -139,3 +139,4 @@ Foundation Models https://arxiv.org/pdf/2108.07258
 3/8/2026
 - Ran inference with 30 epochs of backtranslation fresh. got 29.5 with 4 beams.
 - Trained the fresh model on the backtr. for another 10 epochs (30->40)
+- Ran it, got 28.8
