@@ -141,3 +141,10 @@ Foundation Models https://arxiv.org/pdf/2108.07258
 - Trained the fresh model on the backtr. for another 10 epochs (30->40)
 - Ran it, got 28.8
 - Trained a fresh model on the basic train/test but substitute numbers, and formatted it exactly like the word2vec words I used.
+- Ran the substitute numbers model, got 14.9.
+    - Realized that the test csv doesnt actually have any (roman numberal transcribed) numbers in it. So it wouldn't help anyway???
+
+3/11/2026
+- Looked over the gathered techniques page and marked a bunch as TODO.
+
+3/12/2026
