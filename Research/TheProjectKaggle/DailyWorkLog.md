@@ -148,3 +148,21 @@ Foundation Models https://arxiv.org/pdf/2108.07258
 - Looked over the gathered techniques page and marked a bunch as TODO.
 
 3/12/2026
+- trained synonym (mispelled as simile) model for 20 epochs.
+- implemented the mask-fill training file.
+- TODO: read byt5 paper: https://arxiv.org/pdf/2105.13626
+- ran the mask-fill (pre)-training (EN&AKK) for 20 epochs.
+    - NOTE! I did NOT split the training data for use in training later. This will invalidate the results I get from the training set. I SHOULD have set it to run on the untranslated dataframe provided by the competition. perhaps it will be interesting to compare the results of that with the current one I am running.
+        - I have now prepared another file to run without it, but I can only run two sessions at once so I must wait an hour or two. for similes to finish.
+- Synonym finished (20 epoch) with validation loss of 0.4ish, it looks like it still has room to train (note that it is stochastic like the sentence swap was).
+- Infer synonym inference with 20 epoch 4 beam, got: 15.7, I think it needs more time to cook.
+- Train the EN&AKK pretrained for main training for 20 epochs.
+- Train Synonym 10 more (20+10)
+- make akkadian only training set which includes stuff from entries which had gaps (split on gaps) and include only 25 char length or higher.
+- Infer en/akk 20-20 epochs. it got 27.8 // This makes me think that combining with sentence split would be a good idea.
+- Infer synonyms 20+10=30 epoch. It got: 15.9
+- Train mask-fill with akkadian only (from non-training set). on sequences above 25 characters length. for 20 epochs. TODO consider making a for loop to redo after every epoch!!!! Please!!!
+
+3/13/2026
+- Train akk-only pretrained 20-20 train epochs.
+- Infer akk-only pretrained 20-20 train epochs. result was 26.7. I feel like this isn't conclusively bad though. I wanna try again since the other one did so well.

@@ -8,7 +8,7 @@
 🔍 = Want to try
 
 ### From "Natural Language Processing with Transformers" book
-- 🔍 Fill Mask/ Masked Language Modelling pg. 290
+- ✅📨 Fill Mask/ Masked Language Modelling pg. 290
 - Data Augmentation: pg. 272
     - Back translation. of source text eg. En -> German -> En
     - Token Preturbations. (words or tokens?)
@@ -59,7 +59,8 @@
 - Denoising (3.2)
     - Have one encoder that encodes EN & Akkad, (align those vectors?) then have two different decoders for the target languages we want (akkad or english direction)
         - "adversarial training objective is also introduced to constrain the source and the target sentence latent representations to have the same distribution. "
-- 🛠️ Unsupervised Bilingual Word Embedding (UBWE) (3.2)
+- ❌ Unsupervised Bilingual Word Embedding (UBWE) (3.2)
+    - *It performed much worse than baseline. I'm not sure why. Maybe due to the loss of punctuation used in preprocessing the data? That conclusion would align well with my number removal comparison which used the same preprocessing. they both had about 15 ish*
     - /// I wonder if I could use some sort of autoencoder model with the akkad stuff. or if that would even be worth the time? how hard is it to do?
     - [Vecmap Technique](https://github.com/artetxem/vecmap) seems to be supported by related papers
         - Perhaps I can use this to jointly and accurately add data augmentation.
@@ -78,4 +79,5 @@
 
 
 # Self idea?
+- ❌ train on a Dictionary itself (bad idea because transformers work by association)
 - ❌ Replace numbers manually.
