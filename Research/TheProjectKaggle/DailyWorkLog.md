@@ -166,3 +166,23 @@ Foundation Models https://arxiv.org/pdf/2108.07258
 3/13/2026
 - Train akk-only pretrained 20-20 train epochs.
 - Infer akk-only pretrained 20-20 train epochs. result was 26.7. I feel like this isn't conclusively bad though. I wanna try again since the other one did so well.
+- Modified akk-only pretrain code to do the randomization after each epoch.
+- pretrain the akk-only for 20 more epochs (any more and quota will be too full unfortunately). //Will it go over? idk
+    - Once it fills again tomorrow, I'll check the validation loss and see about pretraining it for longer. (training for longer is fine as long as it makes a better translator in the end.)
+    - Afterwards, I can try training it generically, or with the sentence split, or other techniques I've used. I need to make the sentence split also shuffle every epoch so its better.
+- Train the akk-only (20+1*20) for 20 epochs as regular training 
+- Infer the above^, got: 26.5
+    - Absolutely no improvement huh. why did the akk/en go up slightly? was it just a fluke? are the examples in akkadian too small?
+
+3/17?/2026
+- Retrain the Akk-only pretrain with mean span of 20 instead of 3 because the byt5 paper said they used 20 bytes. Also take away everything in that pretraining data less than 100 characters long.
+
+3/19/2026
+- Advisor meeting
+
+3/25/2026
+- Read over the 1st,3rd, and 6th place solutions
+- "perhaps I should write my own write up on Kaggle while it's still fresh?"
+
+3/26/2026
+- 

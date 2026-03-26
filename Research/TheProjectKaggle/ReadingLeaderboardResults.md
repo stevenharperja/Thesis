@@ -1,0 +1,29 @@
+- [1st place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/dpc-1st-data-quality-dictates-everything)
+    - https://www.kaggle.com/code/ngyzly/better-candidate-diversity-on-public-model?scriptVersionId=302266718
+        - [MBR](https://suzyahyah.github.io/bayesian%20inference/machine%20translation/2022/02/15/mbr-decoding.html_)
+            - Random binge of motivation/mindset blogposts by this person. https://suzyahyah.github.io/categories
+        - [MBR](https://www.youtube.com/watch?v=w8_rLLPkE5A)
+            - "the center-est (vector) point of a lot of (weighted by stuff like probability (like beam search)) output samples. Choose the output which is closest to that." 
+        - [Temperature](https://stackoverflow.com/questions/58764619/why-should-we-use-temperature-in-softmax/63471046#63471046)
+        - "Mbr seems to literally be just pick the output of the models in the ensemble which have good bleu, jaccard, chrf++, etc. scores when their text is (n^2) compared with each other's texts."
+    - notable things:
+        - They recreated their own dataset.
+        - Their artificial data was completely made by an *LLM* piecing things together, NOT a translation model.
+        - They took MBR pointers from the MBR notebook publicly shared near the end of the kaggle competition.
+    
+- [2nd place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/2nd-place-data-centric-akkadian-nmt)
+    - Not that interesting?
+- [3rd place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/3rd-synthetic-data-to-teach-oa-fundamentals)
+    - "THEY MADE CLAUDE CODE TEACH AKKADIAN!!!"
+
+- [6th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/dpc-6th-solution)
+    - "JACK MADE IT AND ALL THE TEAM WERE SILVER BEFORE!! OH THE DRAMA!!"
+    - They do model training tricks yippee!
+    - Their cleaned Train.csv yielded 34.0??????
+        - (I'm assuming model tricks applied).
+    - they said Model weight averaging performed poorly
+    - bidirectional training apparently went unexplored, but didn't look promising.
+    - [Open source ocr method](https://www.kaggle.com/code/angantyr/text-extraction-from-pdf-docs-using-glm-oc)
+- [7th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/short-7th-place-note)
+    - bigger models were better
+    - byt5-xl 3 epochs

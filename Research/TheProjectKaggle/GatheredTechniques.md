@@ -8,7 +8,11 @@
 🔍 = Want to try
 
 ### From "Natural Language Processing with Transformers" book
-- ✅📨 Fill Mask/ Masked Language Modelling pg. 290
+- ⬜ Fill Mask/ Masked Language Modelling pg. 290
+    - ✅ akk/en had a 2 or so point increase.
+    - ⬜ akk-only had no point increase, and costed a lot of gpu hours.
+        - Notably the Byt5 says to do a mean of 20, but I used 3 for both en/akk and akk-only. so perhaps I should increase it to 20 and try again.
+            - maybe cut out all examples less than 100 characters.
 - Data Augmentation: pg. 272
     - Back translation. of source text eg. En -> German -> En
     - Token Preturbations. (words or tokens?)
@@ -17,7 +21,7 @@
         - Random swap
         - Random Deletion
     - 🔍 Unsupervised Data Augmentation (pipeline technique?) pg. 295
-    - Uncertainty-aware self-training pg. 296
+    - 🔍 Uncertainty-aware self-training pg. 296
     - Link to https://amitness.com/posts/data-augmentation-for-nlp
 ### From ["A Visual Survey of Data Augmentation in NLP" ](https://amitness.com/posts/data-augmentation-for-nlp)
 - Synonym replacement
