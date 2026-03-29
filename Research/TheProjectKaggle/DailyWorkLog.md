@@ -181,8 +181,9 @@ Foundation Models https://arxiv.org/pdf/2108.07258
 - Advisor meeting
 
 3/25/2026
-- Read over the 1st,3rd, and 6th place solutions
+- Read over the 1st,3rd, and 6th and 7th place solutions
 - "perhaps I should write my own write up on Kaggle while it's still fresh?"
 
 3/26/2026
-- 
+- Advisor meeting
+- Read over the 5,8,10,11,12 place solutions
