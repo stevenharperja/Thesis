@@ -15,19 +15,16 @@
     - Not that interesting?
 - [3rd place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/3rd-synthetic-data-to-teach-oa-fundamentals)
     - "THEY MADE CLAUDE CODE TEACH AKKADIAN!!!"
-
-- [6th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/dpc-6th-solution)
-    - "JACK MADE IT AND ALL THE TEAM WERE SILVER BEFORE!! OH THE DRAMA!!"
-    - They do model training tricks yippee!
-    - Their cleaned Train.csv yielded 34.0??????
-        - (I'm assuming model tricks applied).
-    - they said Model weight averaging performed poorly
-    - bidirectional training apparently went unexplored, but didn't look promising.
-    - [Open source ocr method](https://www.kaggle.com/code/angantyr/text-extraction-from-pdf-docs-using-glm-oc)
-    - lotsa posted code
-- [7th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/short-7th-place-note)
-    - bigger models were better
-    - byt5-xl 3 epochs
+- [4th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/fourth-place-solution-writeup)
+    - models:
+        - mT5-Large / ByT5-Large
+        - ByT5-XL (bfloat16)
+    - No synthetic data? just good data cleaning and splitting and gathering.
+    - MBR ensemble
+        - ONLY chrf++
+    - weighted averaging of weights of different model checkpoints.
+    - Has section for further work, which was a data synthesis method.
+    - Lotsa posted code
 
 - [5th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/5th-solution)
     - byt5-xl
@@ -44,6 +41,19 @@
             -   Pseudo-label: translate published_texts.csv transliterations to English with the forward model using beam search.
             -   Back-translation: first generate 10,000 translation-like English sentences with Qwen3.5-27B, using translations from both train.csv and the PDF-extracted data as few-shot examples, and then back-translate them into Akkadian with the reverse model.
     - quantization for inference.
+- [6th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/dpc-6th-solution)
+    - "JACK MADE IT AND ALL THE TEAM WERE SILVER BEFORE!! OH THE DRAMA!!"
+    - They do model training tricks yippee!
+    - Their cleaned Train.csv yielded 34.0??????
+        - (I'm assuming model tricks applied).
+    - they said Model weight averaging performed poorly
+    - bidirectional training apparently went unexplored, but didn't look promising.
+    - [Open source ocr method](https://www.kaggle.com/code/angantyr/text-extraction-from-pdf-docs-using-glm-oc)
+    - lotsa posted code
+- [7th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/short-7th-place-note)
+    - bigger models were better
+    - byt5-xl 3 epochs
+
 
 - [8th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/8th-place-solution-2-stage-fine-tuning-high-qua)
     - byt5-xl
@@ -52,6 +62,12 @@
     - did NOT make their own dataset!!!!
     - Uniquely? used RL, though it didn't help
     - GLM ocr
+- [9th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/9th-place-solution-for-the-deep-past-challenge-c)
+    - FULL CODE ON GITHUB!!!!!
+    - A very very in-depth write-up
+    - 4 ensemble. one constituent is a soup of checkpoints (average of model weights)
+    - Beam search but use MBR
+    - Does post-processing
 - [10th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/10th-place-solution-seq2seq-cpt-pseudo-label)
     - byt5-large, byt5-xl, MADLAD-400-3B-MT
         - What??? Unique!!!
@@ -72,22 +88,6 @@
     - Used external data
     - Synthetic data is interesting and the build process was custom coded for the dataset.
     - Literally just "get the data and feed it into the model in a specific order"
-- [4th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/fourth-place-solution-writeup)
-    - models:
-        - mT5-Large / ByT5-Large
-        - ByT5-XL (bfloat16)
-    - No synthetic data? just good data cleaning and splitting and gathering.
-    - MBR ensemble
-        - ONLY chrf++
-    - weighted averaging of weights of different model checkpoints.
-    - Has section for further work, which was a data synthesis method.
-- [9th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/9th-place-solution-for-the-deep-past-challenge-c)
-    - FULL CODE ON GITHUB!!!!!
-    - A very very in-depth write-up
-    - 4 ensemble. one constituent is a soup of checkpoints (average of model weights)
-    - Beam search but use MBR
-    - Does post-processing
-
 - [13th](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/top-13-solution)
     - inference output post processing
     - MBR reranking of beam outputs. but only one model, not ensemble; Single-model MBR
@@ -291,4 +291,5 @@
 - Check any project links or cited public notebooks/posts
 - An automated pdf extraction pipeline (use someone's premade one if it exists to save time!!!)
 - the main thing I found helped in my experimenting was the sentence splice. So I wonder if that would help on top of someone else's solution
+- 4th and 6th have extensive code I think, so they might be particularly great to look at, but also some of the lower ranked ones had some thorough code postings.
 - 
