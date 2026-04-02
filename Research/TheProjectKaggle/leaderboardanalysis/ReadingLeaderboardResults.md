@@ -283,6 +283,10 @@
     - If you have all possible data, then do augmentation.
     - There were no posted solutions which only did data augmentation without at least grabbing all of the provided competition data from the PDFs.
         - I only used train.csv
+- lower aaruond 100 place had some public model integrations
+- many said dont use postprocessing. but some teams did use postprocessing
+- many used mbr, but some did worse with mbr. Why?
+- 
 
 
 ### Most shared ideas that maybe I ought to implement:
