@@ -296,4 +296,4 @@
 - An automated pdf extraction pipeline (use someone's premade one if it exists to save time!!!)
 - the main thing I found helped in my experimenting was the sentence splice. So I wonder if that would help on top of someone else's solution
 - 4th and 6th have extensive code I think, so they might be particularly great to look at, but also some of the lower ranked ones had some thorough code postings.
-- 
+- I should not do the chatgpt pipelines because those cost money. especially first place costed quite a bit apparently? idk maybe do a small one. or the one that was free in 9th place or smth.

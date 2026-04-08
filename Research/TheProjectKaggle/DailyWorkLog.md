@@ -187,3 +187,12 @@ Foundation Models https://arxiv.org/pdf/2108.07258
 3/26/2026
 - Advisor meeting
 - Read over the 5,8,10,11,12 place solutions
+
+at some point I went over all the rest of the solutions before 4/02
+
+4/02/2026 
+- Advisor meeting
+
+4/06/2026
+- Begin bullet point draft for thesis.
+- 
