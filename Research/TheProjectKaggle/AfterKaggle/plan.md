@@ -1,6 +1,6 @@
 # THE PLAN
 
-1. Take a dataset or two from the victors
+1. Take a dataset or two from the victors // Done
 2. Train some stuff
     - Use some of their epic techniques, or just go for it with a regular pipeline.
 3. Ensemble it using MBR, do multiple of the same model for more betterer MBR
@@ -19,3 +19,8 @@ Maybe lets just replicate 2nd place and do an ensemble on it. 2nd place was good
 
 TODO
 import the 2nd place data properly. use chappy to match that json syntax thingy
+
+TODO
+- set up an evaluation thing on some data from train.
+- Set up single-model MBR so I can get more out of the model trained on the larger data.
+    - Use this: https://www.kaggle.com/code/waterjoe/lb-35-9-ensembling-post-processing-baseline

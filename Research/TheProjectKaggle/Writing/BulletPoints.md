@@ -40,6 +40,7 @@
 ### Data Augmentation
 - Techniques
 ### Recommended search terms
+- 
 ## Past papers on Akkadian
 - [Translating Akkadian to English with neural machine translation](https://academic.oup.com/pnasnexus/article/2/5/pgad096/7147349?login=true#412513286/)
 - Huggingface dataset  // TODO grab this
@@ -97,7 +98,7 @@
 - It is better to get more data than to try to do data augmentation on inaccurate data.
 - It's good to explore with a smaller model version, then try out a bigger version to see if it works better. not sure when this would be the case that it would work better though.
 - Postprocessing on a model's output can overfit to your validation set.
- 
+
 # References
  
 # Appendices

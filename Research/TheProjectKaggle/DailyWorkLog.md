@@ -195,4 +195,19 @@ at some point I went over all the rest of the solutions before 4/02
 
 4/06/2026
 - Begin bullet point draft for thesis.
-- 
+
+4/09/2026
+- Advisor meeting
+
+4/10/2026
+- Imported dataset from second place and made it ready for training.
+    - Projected to take 40 hours on byt5-small with P100.
+    - second place uses byt5-large
+4/11
+- ran it, exceeded kaggle time limit
+
+4/12
+- ran just one epoch and eval'd it, got 38 ish with byt5-small
+- made plans
+4/13
+- ran one more epoch.
