@@ -211,3 +211,9 @@ at some point I went over all the rest of the solutions before 4/02
 - made plans
 4/13
 - ran one more epoch.
+4/14
+- ran one more epoch
+4/15
+- Filled out form to graduate
+- filled out 3rd committee memberform
+- Copied techniques (list of interesting ones) to draft.md
