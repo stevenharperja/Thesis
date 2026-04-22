@@ -217,3 +217,14 @@ at some point I went over all the rest of the solutions before 4/02
 - Filled out form to graduate
 - filled out 3rd committee memberform
 - Copied techniques (list of interesting ones) to draft.md
+
+I think I wrote some stuff at some point
+
+4/21
+- added more to draft
+- tried to run 1 epoch with byt5 base so that I can ensemble base and small later. but not enough gpu memory
+- grabbed a dataset from 8th place and ran it for 3 epochs with byt5-small - got 3 score, needs more epochs
+
+4/22
+- ran the 8th place data for 9 more epochs (12 total)
+- 

@@ -62,6 +62,7 @@
     - did NOT make their own dataset!!!!
     - Uniquely? used RL, though it didn't help
     - GLM ocr
+    - vLLM  to host llm
 - [9th place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/9th-place-solution-for-the-deep-past-challenge-c)
     - FULL CODE ON GITHUB!!!!!
     - A very very in-depth write-up

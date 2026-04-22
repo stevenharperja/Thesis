@@ -1,0 +1,3 @@
+Take this excel sheet organized by kaggle team (1st,2nd,3rd, etc.) which shows what each team found didnt work in their solutions. 
+Reorganize the data so that it shows what techniques existed, and then lists which teams tried them. Put a checkmark emoji next to the team if they had success with it, put an X emoji next to the team if they had failure with it. 
+
