@@ -22,6 +22,11 @@
 My literature review consisted mostly of papers about doing machine translation for low resource languages. These primarily covered techniques for data augmentation. So that is what I focused my efforts on.
 
 Prior to this competition, there was not that many NML papers on Old Akkadian, but now there are dozens because of the competition. so in the later part of my thesis there was an additional, large amount of reading to cover. Most of these covered what worked/didn't work for them. And methods of processing massive amounts of pdf data was a consistent theme.
+
+notable sources:
+- ["A Visual Survey of Data Augmentation in NLP" ](https://amitness.com/posts/data-augmentation-for-nlp)
+- [Low-resource Neural Machine Translation: Methods and Trends](https://dl.acm.org/doi/full/10.1145/3524300#sec-3)
+- [Translating Akkadian to English with neural machine translation](https://academic.oup.com/pnasnexus/article/2/5/pgad096/7147349?login=true#412513286)
 # Background
 ## Old Akkadian
 ### The time period, and archeology
@@ -54,6 +59,8 @@ Prior to this competition, there was not that many NML papers on Old Akkadian, b
 ### The organization running the program, and history of decipherment of akkadian
 ### Contents of the data
 - trades, politics, etc.? (How do I analyze this?)
+    - feed a section of them through an llm?
+    - chatgpt says: "The overall dataset is heavily skewed toward economic and bureaucratic communication, with a smaller portion of personal correspondence."
 ## Byt5
 ### Transformer architecture
 - Grab some stuff and cite Illustrated Transformer
