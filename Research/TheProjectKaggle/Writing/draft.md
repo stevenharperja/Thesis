@@ -43,7 +43,7 @@ notable sources:
 - SOV
     - most other semitic have VSO or SVO
 - has two unique prepositions that are pronounced differently in the other semitic languages
-- mix of logograms and syllabic script, with some markers for divine names. Mainly syllabic? I'm sure if "OLD" akkadian was syllabic though since wikipedia doesn't specify the times.
+- mix of logograms and syllabic script, with some markers for divine names. Mainly syllabic? I'm not sure if "OLD" akkadian was syllabic though since wikipedia doesn't specify the times.
 - Old Akkadian is older than Old Assyrian
     - Akkadian is divided into several varieties based on geography and historical period:[22]
 

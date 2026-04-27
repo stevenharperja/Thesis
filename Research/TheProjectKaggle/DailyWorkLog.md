@@ -227,4 +227,4 @@ I think I wrote some stuff at some point
 
 4/22
 - ran the 8th place data for 9 more epochs (12 total)
-- 
+- added some links in background chapter
