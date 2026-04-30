@@ -226,5 +226,19 @@ I think I wrote some stuff at some point
 - grabbed a dataset from 8th place and ran it for 3 epochs with byt5-small - got 3 score, needs more epochs
 
 4/22
-- ran the 8th place data for 9 more epochs (12 total)
+- ran the 8th place data for 9 more epochs (12 total) // FAILED
 - added some links in background chapter
+4/23
+- advisor meeting
+
+4/24-28
+- slowly fill up the whatworked/didnt work sections
+
+4/29
+- ran the model for 5 more epochs for a total of just 8.
+- Analyzed what worked for 6,8,11, and I forgot what else.
+- 12th place mentioned google notebooklm so I tried it on 11th place and found that it roughly corresponded with my desired analyses. I will likely try to use it for 13 14 15 (with some heavy oversight of the LLM).
+
+4/30
+- ran submission with 8 epoch 8th place data model. Got:
+- Advisor meeting
