@@ -240,5 +240,11 @@ I think I wrote some stuff at some point
 - 12th place mentioned google notebooklm so I tried it on 11th place and found that it roughly corresponded with my desired analyses. I will likely try to use it for 13 14 15 (with some heavy oversight of the LLM).
 
 4/30
-- ran submission with 8 epoch 8th place data model. Got:
+- ran submission with 8 epoch 8th place data model. It did not work. Perhaps I did something wrong. Oh well.
+- Advisor meeting
+
+5/something
+- filled in 13-15 in the techniques excel spreadsheet
+
+5/7
 - Advisor meeting
