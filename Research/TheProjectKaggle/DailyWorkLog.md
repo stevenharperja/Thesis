@@ -248,3 +248,7 @@ I think I wrote some stuff at some point
 
 5/7
 - Advisor meeting
+
+5/7
+- picked some techniques that looked doable
+- Advisor meeting
