@@ -56,11 +56,27 @@ notable sources:
 - For context, agriculture had already been going on for 2000-6000+ years. https://en.wikipedia.org/wiki/Neolithic_in_the_Near_East
 - Include an example image of cuneiform to transliteration to english from one of the pdfs
 - 
-### The organization running the program, and history of decipherment of akkadian
+### The organization running the program
+"Four thousand years ago, Assyrian merchants left behind one of the world’s richest archives of everyday and commercial life. Tens of thousands of clay tablets record debts settled, caravans dispatched, and discuss day-to-day family matters. Today, half of these tablets remain silent, not because they’re damaged, but because so few people can read the language pressed into their clay. Many have sat untranslated in museum drawers for more than a century.
+
+The Deep Past Challenge turns this ancient mystery into a modern machine-learning problem by inviting competitors to help unlock the largest untranslated archive of the ancient world. We invite you to build translation models for Old Assyrian cuneiform tablets: Bronze Age texts that have sat unread in museum collections for over a century. Old Assyrian—the dialect used on these tablets—is an early form of Akkadian, the oldest documented Semitic language.
+
+Nearly twenty-three thousand tablets survive documenting the Old Assyrian trading networks that connected Mesopotamia to Anatolia. Only half have been translated, and less than a dozen scholars in the world are specialized to read the rest.
+
+These aren’t the polished classics of Greece and Rome, curated and copied by scribes who chose whose voices survived. These are unfiltered, straight from the people who wrote them: letters, invoices and contracts written on clay by ancient merchants and their families. They’re the Instagram stories of the Bronze Age: mundane, immediate, and breathtakingly real.
+
+Your task is to build neural machine-translation models that convert transliterated Akkadian into English. The challenge: Akkadian is a low-resource, morphologically complex language where a single word can encode what takes multiple words in English. Standard architectures built for modern, data-rich languages fail here.
+Crack this problem and you’ll give voice to 10,000+ untranslated tablets. And you'll do more than revive the past: you'll help pioneer a blueprint for translating the thousands of endangered and overlooked languages—ancient and modern—that the AI age has yet to reach." from https://www.kaggle.com/competitions/deep-past-initiative-machine-translation
+### history of decipherment of akkadian
+
+https://www.ebl.lmu.de/about/library
+
 ### Contents of the data
 - trades, politics, etc.? (How do I analyze this?)
     - feed a section of them through an llm?
     - chatgpt says: "The overall dataset is heavily skewed toward economic and bureaucratic communication, with a smaller portion of personal correspondence."
+
+    ["the competition tests Old Assyrian merchant correspondence exclusively."](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/9th-place-solution-for-the-deep-past-challenge-c)
 ## Byt5
 ### Transformer architecture
 - Grab some stuff and cite Illustrated Transformer

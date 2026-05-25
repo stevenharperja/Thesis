@@ -252,3 +252,14 @@ I think I wrote some stuff at some point
 5/7
 - picked some techniques that looked doable
 - Advisor meeting
+5/14
+- advisor meeting
+
+5/18 
+- categorized the techniques
+5/19
+- renamed that model submission that did well to reflect that it used the 2nd place dataset.
+- read over 9th place submission to see if I could use its data. It seems like maybe no?
+5/21
+- advisor meeting
+
