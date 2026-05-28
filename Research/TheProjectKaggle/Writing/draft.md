@@ -14,7 +14,16 @@
 ## Kaggle Competition
 
 - Take the text from here and format it for the thesis: https://www.kaggle.com/competitions/deep-past-initiative-machine-translation
+"Four thousand years ago, Assyrian merchants left behind one of the world’s richest archives of everyday and commercial life. Tens of thousands of clay tablets record debts settled, caravans dispatched, and discuss day-to-day family matters. Today, half of these tablets remain silent, not because they’re damaged, but because so few people can read the language pressed into their clay. Many have sat untranslated in museum drawers for more than a century.
 
+The Deep Past Challenge turns this ancient mystery into a modern machine-learning problem by inviting competitors to help unlock the largest untranslated archive of the ancient world. We invite you to build translation models for Old Assyrian cuneiform tablets: Bronze Age texts that have sat unread in museum collections for over a century. Old Assyrian—the dialect used on these tablets—is an early form of Akkadian, the oldest documented Semitic language.
+
+Nearly twenty-three thousand tablets survive documenting the Old Assyrian trading networks that connected Mesopotamia to Anatolia. Only half have been translated, and less than a dozen scholars in the world are specialized to read the rest.
+
+These aren’t the polished classics of Greece and Rome, curated and copied by scribes who chose whose voices survived. These are unfiltered, straight from the people who wrote them: letters, invoices and contracts written on clay by ancient merchants and their families. They’re the Instagram stories of the Bronze Age: mundane, immediate, and breathtakingly real.
+
+Your task is to build neural machine-translation models that convert transliterated Akkadian into English. The challenge: Akkadian is a low-resource, morphologically complex language where a single word can encode what takes multiple words in English. Standard architectures built for modern, data-rich languages fail here.
+Crack this problem and you’ll give voice to 10,000+ untranslated tablets. And you'll do more than revive the past: you'll help pioneer a blueprint for translating the thousands of endangered and overlooked languages—ancient and modern—that the AI age has yet to reach." from https://www.kaggle.com/competitions/deep-past-initiative-machine-translation
 
 ## Translating Old Akkadian to English
 
@@ -57,16 +66,7 @@ notable sources:
 - Include an example image of cuneiform to transliteration to english from one of the pdfs
 - 
 ### The organization running the program
-"Four thousand years ago, Assyrian merchants left behind one of the world’s richest archives of everyday and commercial life. Tens of thousands of clay tablets record debts settled, caravans dispatched, and discuss day-to-day family matters. Today, half of these tablets remain silent, not because they’re damaged, but because so few people can read the language pressed into their clay. Many have sat untranslated in museum drawers for more than a century.
-
-The Deep Past Challenge turns this ancient mystery into a modern machine-learning problem by inviting competitors to help unlock the largest untranslated archive of the ancient world. We invite you to build translation models for Old Assyrian cuneiform tablets: Bronze Age texts that have sat unread in museum collections for over a century. Old Assyrian—the dialect used on these tablets—is an early form of Akkadian, the oldest documented Semitic language.
-
-Nearly twenty-three thousand tablets survive documenting the Old Assyrian trading networks that connected Mesopotamia to Anatolia. Only half have been translated, and less than a dozen scholars in the world are specialized to read the rest.
-
-These aren’t the polished classics of Greece and Rome, curated and copied by scribes who chose whose voices survived. These are unfiltered, straight from the people who wrote them: letters, invoices and contracts written on clay by ancient merchants and their families. They’re the Instagram stories of the Bronze Age: mundane, immediate, and breathtakingly real.
-
-Your task is to build neural machine-translation models that convert transliterated Akkadian into English. The challenge: Akkadian is a low-resource, morphologically complex language where a single word can encode what takes multiple words in English. Standard architectures built for modern, data-rich languages fail here.
-Crack this problem and you’ll give voice to 10,000+ untranslated tablets. And you'll do more than revive the past: you'll help pioneer a blueprint for translating the thousands of endangered and overlooked languages—ancient and modern—that the AI age has yet to reach." from https://www.kaggle.com/competitions/deep-past-initiative-machine-translation
+// not necessary?
 ### history of decipherment of akkadian
 
 https://www.ebl.lmu.de/about/library
@@ -177,10 +177,57 @@ This shows that in a low resource data environment, it is always best to get mor
 ### The aftermath of the competition
 - Overview of 1st through 101st writeups
 - A focused overview of 1st through 10th
-## Post competition experimentation
+## Post competition 
+### Analysis
+- 7 ish categories of techniques used
+    - Data Extraction
+        - OCR
+            - Most top teams extracted extra data from the pdfs provided from the competition, or went and found akkadian data from the akkadian respositories online. This would be difficult for me to replicate in a timely manner, so for my post-competition experiments, I decided to instead use data from teams who provided their extracted data rather than recreate it on my own.
+    - Data Augmentation
+        -  LLM rule based augmentation
+            3rd place, (who else?)
+        - Pseudo labelling (knowledge distillation)
+        - Back translation
+    - Training technique
+        - Knowledge distillation
+        - Multi language augmentation
+        - Projected Gradient Descent
+        - Backtranslation (5)
+        - Exponential Moving Average (EMA)
+        - Fine tuning to fit the train.csv after using their own data
+        - Applying a penalty to the length
+        - LoRA (how? 12)
+        - Random Drop for model diversity (6)
+        - Translation memory (9)
+    - Pre processing
+        - Repairing OCR
+        - Matching guidelines shared by the host (15)
+            - text normalization (2)
+        - 100-400 length to match competition(11)
+
+    - Post processing
+        - MBR reranking
+    - Model type
+        - Large models worked for most teams.
+            - Requires external resources so I did not replicate it.
+    - Ensemble diversification
+        - Ensembling
+        - Multiple models
+            - models trained on different data subsets
+            - different model types
+            - different model sizes
+        - MBR again to glue it all together.
+
+### Experimentation using that analysis
 - TODO
 - Used the 2nd place data and just trained a byt5-small model directly on it. It seems the data works well, getting over 38 on public and 40 on private score.
-- Used the 8th place data to train a byt5 small model.
+- Used the 8th place data to train a byt5 small model. It didn't work well. I think I mishandled the data
+- I tried to use byt5-base which has more parameters than byt5-small, but it wouldn't fit on the gpu I had access to.
+- //Didn't try yet
+    - MBR
+    - EMA?
+    - Random drop
+    - 
 # Discussion
 
 # Conclusion 
@@ -194,6 +241,9 @@ This shows that in a low resource data environment, it is always best to get mor
     - provide any relevant knowledge necessary to do the job to the LLM. Like json exerpts from a book
     - An example could be a you could give someone. "here's these grammar rules for akkadian that are relevant to the following passage, here's every relevant definition,  give your best guess to try to translate this."
     - Primarily this thought comes from [3rd place](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/3rd-synthetic-data-to-teach-oa-fundamentals) 
+
+# Future work
+- These techniques can be used on other low resource languages or old languages which are hard to decipher.
 
 
 # References
