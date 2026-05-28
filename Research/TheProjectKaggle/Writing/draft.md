@@ -23,9 +23,11 @@ The Deep Past Challenge was a Kaggle competition focused on the translation of O
 
 The competition framed this historical and linguistic challenge as a modern machine learning problem. Participants were tasked with developing models capable of translating transliterated Akkadian text into English. Old Assyrian Akkadian presented significant difficulties for standard translation systems because it is both a low-resource and morphologically complex language, where single words can encode information that requires multiple words in English. As a result, conventional neural machine translation architectures designed for modern, high-resource languages often performed poorly in this setting.
 
-Beyond its immediate objective of translating ancient texts, the competition highlighted broader challenges in natural language processing for endangered, historical, and underrepresented languages. By encouraging the development of translation systems for Akkadian, the competition contributed to ongoing research into low-resource language modeling and demonstrated how machine learning approaches can support the preservation and interpretation of cultural heritage materials. // paraphrased from from https://www.kaggle.com/competitions/deep-past-initiative-machine-translation
+Beyond its immediate objective of translating ancient texts, the competition highlighted broader challenges in natural language processing for endangered, historical, and underrepresented languages. By encouraging the development of translation systems for Akkadian, the competition contributed to ongoing research into low-resource language modeling and demonstrated how machine learning approaches can support the preservation and interpretation of cultural heritage materials. // paraphrased from https://www.kaggle.com/competitions/deep-past-initiative-machine-translation
 
 ## Translating Old Akkadian to English
+???
+
 
 # Literature Review  / Related work / Background
 My literature review consisted mostly of papers about doing machine translation for low resource languages. These primarily covered techniques for data augmentation. So that is what I focused my efforts on.
