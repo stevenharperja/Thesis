@@ -1,9 +1,14 @@
 # Title Page
- 
+ Analysis of Neural Machine Translation Techniques for Translating Old Akkadian to English
 # Abstract
-
+Old Akkadian was an East Semitic language spoken in the Middle East about 4000 years ago. Only written records remain of the original language. A data science competition was held on kaggle.com to incentivize the improvement of techniques to translate this language to English. Thereby reducing the burden on the small number of people in the world who can decipher Old Akkadian. In this paper I explain my work during the competition, and analyze the techniques the most successful contestants used to translate this ancient, low-resource language.
 # Acknowledgments
- 
+- Deep Past Initiative
+- Contestants involved in the competition
+- All those who have helped in the history of deciphering Akkadian.
+- My advisor
+- People whose stuff I cited? maybe?
+
 # Table of Contents
  
 # List of Figures
@@ -13,17 +18,12 @@
 # Introduction
 ## Kaggle Competition
 
-- Take the text from here and format it for the thesis: https://www.kaggle.com/competitions/deep-past-initiative-machine-translation
-"Four thousand years ago, Assyrian merchants left behind one of the world’s richest archives of everyday and commercial life. Tens of thousands of clay tablets record debts settled, caravans dispatched, and discuss day-to-day family matters. Today, half of these tablets remain silent, not because they’re damaged, but because so few people can read the language pressed into their clay. Many have sat untranslated in museum drawers for more than a century.
 
-The Deep Past Challenge turns this ancient mystery into a modern machine-learning problem by inviting competitors to help unlock the largest untranslated archive of the ancient world. We invite you to build translation models for Old Assyrian cuneiform tablets: Bronze Age texts that have sat unread in museum collections for over a century. Old Assyrian—the dialect used on these tablets—is an early form of Akkadian, the oldest documented Semitic language.
+The Deep Past Challenge was a Kaggle competition focused on the translation of Old Assyrian cuneiform tablets using neural machine translation techniques. The competition addressed one of the largest untranslated archives of the ancient world: thousands of clay tablets produced nearly four thousand years ago by Assyrian merchants operating trade networks between Mesopotamia and Anatolia. These tablets documented everyday and commercial activities, including debts, trade transactions, legal agreements, and family correspondence. Although approximately twenty-three thousand tablets survived, only about half had been translated due to the limited number of specialists capable of reading Old Assyrian Akkadian.
 
-Nearly twenty-three thousand tablets survive documenting the Old Assyrian trading networks that connected Mesopotamia to Anatolia. Only half have been translated, and less than a dozen scholars in the world are specialized to read the rest.
+The competition framed this historical and linguistic challenge as a modern machine learning problem. Participants were tasked with developing models capable of translating transliterated Akkadian text into English. Old Assyrian Akkadian presented significant difficulties for standard translation systems because it is both a low-resource and morphologically complex language, where single words can encode information that requires multiple words in English. As a result, conventional neural machine translation architectures designed for modern, high-resource languages often performed poorly in this setting.
 
-These aren’t the polished classics of Greece and Rome, curated and copied by scribes who chose whose voices survived. These are unfiltered, straight from the people who wrote them: letters, invoices and contracts written on clay by ancient merchants and their families. They’re the Instagram stories of the Bronze Age: mundane, immediate, and breathtakingly real.
-
-Your task is to build neural machine-translation models that convert transliterated Akkadian into English. The challenge: Akkadian is a low-resource, morphologically complex language where a single word can encode what takes multiple words in English. Standard architectures built for modern, data-rich languages fail here.
-Crack this problem and you’ll give voice to 10,000+ untranslated tablets. And you'll do more than revive the past: you'll help pioneer a blueprint for translating the thousands of endangered and overlooked languages—ancient and modern—that the AI age has yet to reach." from https://www.kaggle.com/competitions/deep-past-initiative-machine-translation
+Beyond its immediate objective of translating ancient texts, the competition highlighted broader challenges in natural language processing for endangered, historical, and underrepresented languages. By encouraging the development of translation systems for Akkadian, the competition contributed to ongoing research into low-resource language modeling and demonstrated how machine learning approaches can support the preservation and interpretation of cultural heritage materials. // paraphrased from from https://www.kaggle.com/competitions/deep-past-initiative-machine-translation
 
 ## Translating Old Akkadian to English
 
@@ -207,6 +207,13 @@ This shows that in a low resource data environment, it is always best to get mor
 
     - Post processing
         - MBR reranking
+            - Many people used several different evaluation metrics beyond what the kaggle competition scored on. 
+                - based on an [open source solution](https://www.kaggle.com/code/ngyzly/better-candidate-diversity-on-public-model?scriptVersionId=302266718) someone published during the competition 
+                - metrics were: 
+                    - chrF++
+                    - BLEU
+                    - token-level Jaccard similarity
+                    - length prior
     - Model type
         - Large models worked for most teams.
             - Requires external resources so I did not replicate it.
@@ -248,6 +255,20 @@ This shows that in a low resource data environment, it is always best to get mor
 
 # References
 - Abdulla, F., Agarwal, R., Anderson, A., Barjamovic, G., Lassen, A., Ryan Holbrook, and María Cruz. Deep Past Challenge Translate Akkadian to English. https://kaggle.com/competitions/deep-past-initiative-machine-translation, 2025. Kaggle.
+
+# Vita
+## Author: Steven James Harper
+Place of Birth: Montana ???//Why do I need this???
+## Undergraduate Schools Attended: 
+- Columbia Basin College
+- Eastern Washington University
+## Degrees Awarded: 
+- Associates ??? 2020 Columbia Basin College
+- Bachelor of Science in Computer Science 2024 Eastern Washington University
+## Honors and Awards: 
+- Graduate Assistantship, Computer Science and Electrical Engineering Department 2024-2026 Eastern Washington University
+## Professional Experience
+- Internship, Pacific Northwest National Laboratory, Richland, Washington, 2022
 
 # Appendices
  
