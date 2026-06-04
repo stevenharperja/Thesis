@@ -30,19 +30,24 @@ Beyond its immediate objective of translating ancient texts, the competition hig
 
 
 # Literature Review  / Related work / Background
-My literature review consisted mostly of papers about doing machine translation for low resource languages. These primarily covered techniques for data augmentation. So that is what I focused my efforts on.
+My literature review prior to the end of the competition consisted mostly of papers about doing machine translation for low resource languages. These primarily covered techniques for data augmentation. So that is what I focused my efforts on.
 
 Prior to this competition, there was not that many NML papers on Old Akkadian, but now there are dozens because of the competition. so in the later part of my thesis there was an additional, large amount of reading to cover. Most of these covered what worked/didn't work for them. And methods of processing massive amounts of pdf data was a consistent theme.
 
-notable sources:
+
+## notable sources prior to the end of the competition:
 - ["A Visual Survey of Data Augmentation in NLP" ](https://amitness.com/posts/data-augmentation-for-nlp)
+    - Various data augmentation techniques
 - [Low-resource Neural Machine Translation: Methods and Trends](https://dl.acm.org/doi/full/10.1145/3524300#sec-3)
+    - 
 - [Translating Akkadian to English with neural machine translation](https://academic.oup.com/pnasnexus/article/2/5/pgad096/7147349?login=true#412513286)
+
 # Background
 ## Old Akkadian
 ### The time period, and archeology
 - Use wikipedia a lot for this section. https://en.wikipedia.org/wiki/Akkadian_language
-- 2334–2154 BC. Give a rundown of how it would have been in the Akkadian place.
+- 2334–2154 BC. 
+- Give a rundown of how it would have been in the Akkadian place.
 - Agriculture was well established, cities, etc.  
 - Show a map
 - Show a tree of related languages.
@@ -81,16 +86,15 @@ https://www.ebl.lmu.de/about/library
     ["the competition tests Old Assyrian merchant correspondence exclusively."](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation/writeups/9th-place-solution-for-the-deep-past-challenge-c)
 ## Byt5
 ### Transformer architecture
-- Grab some stuff and cite Illustrated Transformer
+- Grab some stuff and cite Illustrated Transformer // No
 
 For this competition, the Byt5 model was the most widely used. It is based on the transformer architecture which revolutionized natural language processing and was invented back in 2017 in the ["Attention is all you need"](https://arxiv.org/abs/1706.03762) paper. Then later the T5 architecture was invented for sequence to sequence processing, and then byt5 was made in a similar style.
-
 
 ### Tokens in byt5
 - No tokens, just bytes.
 - Why this is good for Akkadian
 
-Instead of using tokens like most transformer models, Byt5 does not create tokens, but instead uses unicode raw bytes directly. This allows it to better deal with noisy data that has characters inserted, and also to better deal with data that uses unusual symbols, or has unusual letter sequences. This quality is very useful for Akkadian due to its high usage of accented characters. This allows the model to train faster, since a token model does not need to be trained.
+Instead of using tokens like most transformer models, Byt5 does not create tokens, but instead uses unicode raw bytes directly. This allows it to better deal with noisy data that has characters inserted, and also to better deal with data that uses unusual symbols, or has unusual letter sequences. This quality is very useful for Akkadian due to its high usage of accented characters. This allows the model to train faster, since a tokenizer model does not need to be trained.
 
 # Related work
 ## Low Resource Languages
