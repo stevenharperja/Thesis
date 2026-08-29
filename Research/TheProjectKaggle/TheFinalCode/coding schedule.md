@@ -83,3 +83,16 @@ Stuff I would want to try out that I think is cool:
 - an ablation study if one of them doesn't have one. ie. choosing one model of an ensemble to evaluate just that one and building a chart
     - 4th
     - 8th
+
+
+- I think I'd really like to try running 3rd place's solution, and expanding on it if I can.
+    - It's a new technique enabled by the existence of LLMs
+    - It seems to be a broadly applicable technique for data augmentation in NLP
+        - It was not mentioned in the sources I read before.
+- Then I'd like to ???
+
+questions for me to answer:
+- How can I combine 3rd places code with the others? what parts are combinable between them.
+
+
+//sent an email to tappan saying I'd like to try replicating 3rd place's solution
