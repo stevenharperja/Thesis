@@ -7,7 +7,7 @@ Answer 15 questions.
             - NEVERMIND they did it already.
         - none
     - 2nd:
-        - none // key takeaway was to get more data.
+        - "The key unrealized opportunity: the public/private LB gap indicated I should have kept collecting more external data rather than tuning the model. The private leaderboard reward clean, diverse data much more than architectural tricks."
     - 3rd:
         - none //they used an LLM (qwen) to pick their ensemble output????? they literally grab the probabilities from the output distrib of the LLM though which is an interesting way to do it.
     - 4th:
@@ -61,12 +61,7 @@ Techniques from the spreadsheet "Whatworkeddidntwork.xlsx" that I want to integr
 - fine-tuning on train.csv after using other datasets
 - imitate 3rd place's grammar generation results using local Ollama model?
 - //using an LLM to automate my work extensively.
-- 
-- 
-- 
-- 
-- ensembling
-- k-fold cross-validation
+
 
 Problems to address:
 - Knowing what they've done now, and using the published data. What's the best you could do to replicate their results on basically no budget?
@@ -96,3 +91,13 @@ questions for me to answer:
 
 
 //sent an email to tappan saying I'd like to try replicating 3rd place's solution
+
+
+---Baseline---
+For my baseline, I used byt5 small with 2nd place's dataset by Wu Keneth
+Their dataset has these properties:
+- clean sentence-level translation pairs
+- ~250 documents in the eval set.
+
+I used their hand picked eval dataset to show my results, I assume they have screened it for duplicates from the train set.
+I used their train dataset for my train/test split while training the model.
