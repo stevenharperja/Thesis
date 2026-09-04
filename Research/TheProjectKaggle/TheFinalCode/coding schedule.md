@@ -101,3 +101,12 @@ Their dataset has these properties:
 
 I used their hand picked eval dataset to show my results, I assume they have screened it for duplicates from the train set.
 I used their train dataset for my train/test split while training the model.
+
+
+
+
+-------todo next 2026-08-30 ----
+grab MBR code from competition results somewhere
+download my submission code
+have copilot or antigrav look at the mbr and add it to the submission code
+reupload as new kaggle file
